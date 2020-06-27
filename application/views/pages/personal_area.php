@@ -21,7 +21,7 @@
 	<meta name="Keywords" content="admin,admin dashboard,admin dashboard template,admin panel template,admin template,admin theme,bootstrap 4 admin template,bootstrap 4 dashboard,bootstrap admin,bootstrap admin dashboard,bootstrap admin panel,bootstrap admin template,bootstrap admin theme,bootstrap dashboard,bootstrap form template,bootstrap panel,bootstrap ui kit,dashboard bootstrap 4,dashboard design,dashboard html,dashboard template,dashboard ui kit,envato templates,flat ui,html,html and css templates,html dashboard template,html5,jquery html,premium,premium quality,sidebar bootstrap 4,template admin bootstrap 4"/>
 
 	<!-- Title -->
-	<title> ElroSec. -  Premium Security Services </title>
+	<title> ElroSec. - Personal area </title>
 
 	<!-- Favicon -->
 	<link rel="icon" href="<?php echo base_url(); ?>/assets/img/brand/favicon.png" type="image/x-icon"/>
@@ -1301,10 +1301,11 @@
 	}
 </style>
 <script>
+		//TODO: confirm before updating db(services) on checkbox change
 	$(document).ready(function(){
 		let active_services_arr = <?php echo json_encode($services); ?>;
 		active_services_arr = (active_services_arr[0]);
-
+		console.log(active_services_arr);
 		$.each($('.chkbxs'),function(ind,chkbx){
 			$current_id = $(chkbx).attr('id');
 			$status = (active_services_arr[$current_id] === '1')? true : false;
