@@ -26,6 +26,18 @@ class main_model extends CI_Model
 		}
 	}
 
+	public function getActiveServices($email){
+		$query = $this->db->get_where('users',array('email'=>$email));
+		if($query->num_rows() > 0){
+			$row_arr = $query->row_array();
+			$user_id = $row_arr['id'];
+			$query_2 = $this->db->get_where('services',array('user_id'=>$user_id));
+			return $query_2->result_array();
+		}else{
+			return false;
+		}
+	}
+
 	public function register($data){
 		$this->db->insert($data);
 		return true;

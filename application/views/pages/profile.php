@@ -14,26 +14,26 @@
 	<title> Valex -  Premium dashboard ui bootstrap rwd admin html5 template </title>
 
 	<!-- Favicon -->
-	<link rel="icon" href="<?php echo base_url(); ?>/assets/img/brand/favicon.png" type="image/x-icon"/>
+	<link rel="icon" href="../../assets/img/brand/favicon.png" type="image/x-icon"/>
 
 	<!-- Icons css -->
-	<link href="<?php echo base_url(); ?>/assets/css/icons.css" rel="stylesheet">
+	<link href="../../assets/css/icons.css" rel="stylesheet">
 
 	<!--  Right-sidemenu css -->
-	<link href="<?php echo base_url(); ?>/assets/plugins/sidebar/sidebar.css" rel="stylesheet">
+	<link href="../../assets/plugins/sidebar/sidebar.css" rel="stylesheet">
 
 	<!--  Custom Scroll bar-->
-	<link href="<?php echo base_url(); ?>/assets/plugins/mscrollbar/jquery.mCustomScrollbar.css" rel="stylesheet"/>
+	<link href="../../assets/plugins/mscrollbar/jquery.mCustomScrollbar.css" rel="stylesheet"/>
 
 	<!--- Style css-->
-	<link href="<?php echo base_url(); ?>/assets/css/style.css" rel="stylesheet">
-	<link href="<?php echo base_url(); ?>/assets/css/style-dark.css" rel="stylesheet">
+	<link href="../../assets/css/style.css" rel="stylesheet">
+	<link href="../../assets/css/style-dark.css" rel="stylesheet">
 
 	<!---Skinmodes css-->
-	<link href="<?php echo base_url(); ?>/assets/css/skin-modes.css" rel="stylesheet" />
+	<link href="../../assets/css/skin-modes.css" rel="stylesheet" />
 
 	<!--- Animations css-->
-	<link href="<?php echo base_url(); ?>/assets/css/animate.css" rel="stylesheet">
+	<link href="../../assets/css/animate.css" rel="stylesheet">
 
 </head>
 
@@ -41,7 +41,7 @@
 
 <!-- Loader -->
 <div id="global-loader">
-	<img src="<?php echo base_url(); ?>/assets/img/loader.svg" class="loader-img" alt="Loader">
+	<img src="../../assets/img/loader.svg" class="loader-img" alt="Loader">
 </div>
 <!-- /Loader -->
 
@@ -54,10 +54,10 @@
 			<div class="main-header-left ">
 				<a class="animated-arrow hor-toggle horizontal-navtoggle"><span></span></a><!-- sidebar-toggle-->
 				<a class="header-brand" href="index.html">
-					<img src="<?php echo base_url(); ?>/assets/img/brand/logo-white.png" class="desktop-dark">
-					<img src="<?php echo base_url(); ?>/assets/img/brand/logo.png" class="desktop-logo">
-					<img src="<?php echo base_url(); ?>/assets/img/brand/favicon.png" class="desktop-logo-1">
-					<img src="<?php echo base_url(); ?>/assets/img/brand/favicon-white.png" class="desktop-logo-dark">
+					<img src="../../assets/img/brand/logo-white.png" class="desktop-dark">
+					<img src="../../assets/img/brand/logo.png" class="desktop-logo">
+					<img src="../../assets/img/brand/favicon.png" class="desktop-logo-1">
+					<img src="../../assets/img/brand/favicon-white.png" class="desktop-logo-dark">
 				</a>
 				<div class="main-header-center  ml-4">
 					<input class="form-control" placeholder="Search for anything..." type="search"><button class="btn"><i class="fe fe-search"></i></button>
@@ -68,38 +68,38 @@
 					<li class="">
 						<div class="dropdown  nav-itemd-none d-md-flex">
 							<a href="#" class="d-flex  nav-item nav-link pr-0 country-flag1" data-toggle="dropdown" aria-expanded="false">
-								<span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img src="<?php echo base_url(); ?>/assets/img/flags/us_flag.jpg" alt="img"></span>
+								<span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img src="../../assets/img/flags/us_flag.jpg" alt="img"></span>
 								<div class="my-auto">
 									<strong class="mr-2 ml-2 my-auto">English</strong>
 								</div>
 							</a>
 							<div class="dropdown-menu dropdown-menu-left dropdown-menu-arrow" x-placement="bottom-end">
 								<a href="#" class="dropdown-item d-flex ">
-									<span class="avatar  mr-3 align-self-center bg-transparent"><img src="<?php echo base_url(); ?>/assets/img/flags/french_flag.jpg" alt="img"></span>
+									<span class="avatar  mr-3 align-self-center bg-transparent"><img src="../../assets/img/flags/french_flag.jpg" alt="img"></span>
 									<div class="d-flex">
 										<span class="mt-2">French</span>
 									</div>
 								</a>
 								<a href="#" class="dropdown-item d-flex">
-									<span class="avatar  mr-3 align-self-center bg-transparent"><img src="<?php echo base_url(); ?>/assets/img/flags/germany_flag.jpg" alt="img"></span>
+									<span class="avatar  mr-3 align-self-center bg-transparent"><img src="../../assets/img/flags/germany_flag.jpg" alt="img"></span>
 									<div class="d-flex">
 										<span class="mt-2">Germany</span>
 									</div>
 								</a>
 								<a href="#" class="dropdown-item d-flex">
-									<span class="avatar mr-3 align-self-center bg-transparent"><img src="<?php echo base_url(); ?>/assets/img/flags/italy_flag.jpg" alt="img"></span>
+									<span class="avatar mr-3 align-self-center bg-transparent"><img src="../../assets/img/flags/italy_flag.jpg" alt="img"></span>
 									<div class="d-flex">
 										<span class="mt-2">Italy</span>
 									</div>
 								</a>
 								<a href="#" class="dropdown-item d-flex">
-									<span class="avatar mr-3 align-self-center bg-transparent"><img src="<?php echo base_url(); ?>/assets/img/flags/russia_flag.jpg" alt="img"></span>
+									<span class="avatar mr-3 align-self-center bg-transparent"><img src="../../assets/img/flags/russia_flag.jpg" alt="img"></span>
 									<div class="d-flex">
 										<span class="mt-2">Russia</span>
 									</div>
 								</a>
 								<a href="#" class="dropdown-item d-flex">
-									<span class="avatar  mr-3 align-self-center bg-transparent"><img src="<?php echo base_url(); ?>/assets/img/flags/spain_flag.jpg" alt="img"></span>
+									<span class="avatar  mr-3 align-self-center bg-transparent"><img src="../../assets/img/flags/spain_flag.jpg" alt="img"></span>
 									<div class="d-flex">
 										<span class="mt-2">spain</span>
 									</div>
@@ -136,7 +136,7 @@
 							</div>
 							<div class="main-message-list chat-scroll">
 								<a href="#" class="p-3 d-flex border-bottom">
-									<div class="  drop-img  cover-image  " data-image-src="<?php echo base_url(); ?>/assets/img/faces/3.jpg">
+									<div class="  drop-img  cover-image  " data-image-src="../../assets/img/faces/3.jpg">
 										<span class="avatar-status bg-teal"></span>
 									</div>
 									<div class="wd-90p">
@@ -148,7 +148,7 @@
 									</div>
 								</a>
 								<a href="#" class="p-3 d-flex border-bottom">
-									<div class="drop-img cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/2.jpg">
+									<div class="drop-img cover-image" data-image-src="../../assets/img/faces/2.jpg">
 										<span class="avatar-status bg-teal"></span>
 									</div>
 									<div class="wd-90p">
@@ -160,7 +160,7 @@
 									</div>
 								</a>
 								<a href="#" class="p-3 d-flex border-bottom">
-									<div class="drop-img cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/9.jpg">
+									<div class="drop-img cover-image" data-image-src="../../assets/img/faces/9.jpg">
 										<span class="avatar-status bg-teal"></span>
 									</div>
 									<div class="wd-90p">
@@ -172,7 +172,7 @@
 									</div>
 								</a>
 								<a href="#" class="p-3 d-flex border-bottom">
-									<div class="drop-img cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/12.jpg">
+									<div class="drop-img cover-image" data-image-src="../../assets/img/faces/12.jpg">
 										<span class="avatar-status bg-teal"></span>
 									</div>
 									<div class="wd-90p">
@@ -184,7 +184,7 @@
 									</div>
 								</a>
 								<a href="#" class="p-3 d-flex border-bottom">
-									<div class="drop-img cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/5.jpg">
+									<div class="drop-img cover-image" data-image-src="../../assets/img/faces/5.jpg">
 										<span class="avatar-status bg-teal"></span>
 									</div>
 									<div class="wd-90p">
@@ -295,11 +295,11 @@
 						<a class="new nav-link full-screen-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></a>
 					</div>
 					<div class="dropdown main-profile-menu nav nav-item nav-link">
-						<a class="profile-user d-flex" href=""><img alt="" src="<?php echo base_url(); ?>/assets/img/faces/6.jpg"></a>
+						<a class="profile-user d-flex" href=""><img alt="" src="../../assets/img/faces/6.jpg"></a>
 						<div class="dropdown-menu">
 							<div class="main-header-profile bg-primary p-3">
 								<div class="d-flex wd-100p">
-									<div class="main-img-user"><img alt="" src="<?php echo base_url(); ?>/assets/img/faces/6.jpg" class=""></div>
+									<div class="main-img-user"><img alt="" src="../../assets/img/faces/6.jpg" class=""></div>
 									<div class="ml-3 my-auto">
 										<h6>Petey Cruiser</h6><span>Premium Member</span>
 									</div>
@@ -549,7 +549,7 @@
 							<div class="pl-0">
 								<div class="main-profile-overview">
 									<div class="main-img-user profile-user">
-										<img alt="" src="<?php echo base_url(); ?>/assets/img/faces/6.jpg"><a class="fas fa-camera profile-edit" href="JavaScript:void(0);"></a>
+										<img alt="" src="../../assets/img/faces/6.jpg"><a class="fas fa-camera profile-edit" href="JavaScript:void(0);"></a>
 									</div>
 									<div class="d-flex justify-content-between mg-b-20">
 										<div>
@@ -738,7 +738,7 @@
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="border p-1 card thumb">
-												<a href="#" class="image-popup" title="Screenshot-2"> <img src="<?php echo base_url(); ?>/assets/img/photos/7.jpg" class="thumb-img" alt="work-thumbnail"> </a>
+												<a href="#" class="image-popup" title="Screenshot-2"> <img src="../../assets/img/photos/7.jpg" class="thumb-img" alt="work-thumbnail"> </a>
 												<h4 class="text-center tx-14 mt-3 mb-0">Gallary Image</h4>
 												<div class="ga-border"></div>
 												<p class="text-muted text-center"><small>Photography</small></p>
@@ -746,7 +746,7 @@
 										</div>
 										<div class="col-sm-4">
 											<div class=" border p-1 card thumb">
-												<a href="#" class="image-popup" title="Screenshot-2"> <img src="<?php echo base_url(); ?>/assets/img/photos/8.jpg" class="thumb-img" alt="work-thumbnail"> </a>
+												<a href="#" class="image-popup" title="Screenshot-2"> <img src="../../assets/img/photos/8.jpg" class="thumb-img" alt="work-thumbnail"> </a>
 												<h4 class="text-center tx-14 mt-3 mb-0">Gallary Image</h4>
 												<div class="ga-border"></div>
 												<p class="text-muted text-center"><small>Photography</small></p>
@@ -754,7 +754,7 @@
 										</div>
 										<div class="col-sm-4">
 											<div class=" border p-1 card thumb">
-												<a href="#" class="image-popup" title="Screenshot-2"> <img src="<?php echo base_url(); ?>/assets/img/photos/9.jpg" class="thumb-img" alt="work-thumbnail"> </a>
+												<a href="#" class="image-popup" title="Screenshot-2"> <img src="../../assets/img/photos/9.jpg" class="thumb-img" alt="work-thumbnail"> </a>
 												<h4 class="text-center tx-14 mt-3 mb-0">Gallary Image</h4>
 												<div class="ga-border"></div>
 												<p class="text-muted text-center"><small>Photography</small></p>
@@ -762,7 +762,7 @@
 										</div>
 										<div class="col-sm-4">
 											<div class=" border p-1 card thumb  mb-xl-0">
-												<a href="#" class="image-popup" title="Screenshot-2"> <img src="<?php echo base_url(); ?>/assets/img/photos/10.jpg" class="thumb-img" alt="work-thumbnail"> </a>
+												<a href="#" class="image-popup" title="Screenshot-2"> <img src="../../assets/img/photos/10.jpg" class="thumb-img" alt="work-thumbnail"> </a>
 												<h4 class="text-center tx-14 mt-3 mb-0">Gallary Image</h4>
 												<div class="ga-border"></div>
 												<p class="text-muted text-center"><small>Photography</small></p>
@@ -770,7 +770,7 @@
 										</div>
 										<div class="col-sm-4">
 											<div class=" border p-1 card thumb  mb-xl-0">
-												<a href="#" class="image-popup" title="Screenshot-2"> <img src="<?php echo base_url(); ?>/assets/img/photos/6.jpg" class="thumb-img" alt="work-thumbnail"> </a>
+												<a href="#" class="image-popup" title="Screenshot-2"> <img src="../../assets/img/photos/6.jpg" class="thumb-img" alt="work-thumbnail"> </a>
 												<h4 class="text-center tx-14 mt-3 mb-0">Gallary Image</h4>
 												<div class="ga-border"></div>
 												<p class="text-muted text-center"><small>Photography</small></p>
@@ -778,7 +778,7 @@
 										</div>
 										<div class="col-sm-4">
 											<div class=" border p-1 card thumb  mb-xl-0">
-												<a href="#" class="image-popup" title="Screenshot-2"> <img src="<?php echo base_url(); ?>/assets/img/photos/5.jpg" class="thumb-img" alt="work-thumbnail"> </a>
+												<a href="#" class="image-popup" title="Screenshot-2"> <img src="../../assets/img/photos/5.jpg" class="thumb-img" alt="work-thumbnail"> </a>
 												<h4 class="text-center tx-14 mt-3 mb-0">Gallary Image</h4>
 												<div class="ga-border"></div>
 												<p class="text-muted text-center"><small>Photography</small></p>
@@ -987,7 +987,7 @@
 						<div class="list-group list-group-flush ">
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-3">
-									<span class="avatar avatar-lg brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/12.jpg"><span class="avatar-status bg-success"></span></span>
+									<span class="avatar avatar-lg brround cover-image" data-image-src="../../assets/img/faces/12.jpg"><span class="avatar-status bg-success"></span></span>
 								</div>
 								<div>
 									<strong>Madeleine</strong> Hey! there I' am available....
@@ -998,7 +998,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-3">
-									<span class="avatar avatar-lg brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/1.jpg"></span>
+									<span class="avatar avatar-lg brround cover-image" data-image-src="../../assets/img/faces/1.jpg"></span>
 								</div>
 								<div>
 									<strong>Anthony</strong> New product Launching...
@@ -1009,7 +1009,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-3">
-									<span class="avatar avatar-lg brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/2.jpg"><span class="avatar-status bg-success"></span></span>
+									<span class="avatar avatar-lg brround cover-image" data-image-src="../../assets/img/faces/2.jpg"><span class="avatar-status bg-success"></span></span>
 								</div>
 								<div>
 									<strong>Olivia</strong> New Schedule Realease......
@@ -1020,7 +1020,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-3">
-									<span class="avatar avatar-lg brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/8.jpg"><span class="avatar-status bg-success"></span></span>
+									<span class="avatar avatar-lg brround cover-image" data-image-src="../../assets/img/faces/8.jpg"><span class="avatar-status bg-success"></span></span>
 								</div>
 								<div>
 									<strong>Madeleine</strong> Hey! there I' am available....
@@ -1031,7 +1031,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-3">
-									<span class="avatar avatar-lg brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/11.jpg"></span>
+									<span class="avatar avatar-lg brround cover-image" data-image-src="../../assets/img/faces/11.jpg"></span>
 								</div>
 								<div>
 									<strong>Anthony</strong> New product Launching...
@@ -1042,7 +1042,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-3">
-									<span class="avatar avatar-lg brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/6.jpg"><span class="avatar-status bg-success"></span></span>
+									<span class="avatar avatar-lg brround cover-image" data-image-src="../../assets/img/faces/6.jpg"><span class="avatar-status bg-success"></span></span>
 								</div>
 								<div>
 									<strong>Olivia</strong> New Schedule Realease......
@@ -1053,7 +1053,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-3">
-									<span class="avatar avatar-lg brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/9.jpg"><span class="avatar-status bg-success"></span></span>
+									<span class="avatar avatar-lg brround cover-image" data-image-src="../../assets/img/faces/9.jpg"><span class="avatar-status bg-success"></span></span>
 								</div>
 								<div>
 									<strong>Olivia</strong> Hey! there I' am available....
@@ -1068,7 +1068,7 @@
 						<div class="list-group list-group-flush ">
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-2">
-									<span class="avatar avatar-md brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/9.jpg"><span class="avatar-status bg-success"></span></span>
+									<span class="avatar avatar-md brround cover-image" data-image-src="../../assets/img/faces/9.jpg"><span class="avatar-status bg-success"></span></span>
 								</div>
 								<div class="">
 									<div class="font-weight-semibold" data-toggle="modal" data-target="#chatmodel">Mozelle Belt</div>
@@ -1079,7 +1079,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-2">
-									<span class="avatar avatar-md brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/11.jpg"></span>
+									<span class="avatar avatar-md brround cover-image" data-image-src="../../assets/img/faces/11.jpg"></span>
 								</div>
 								<div class="">
 									<div class="font-weight-semibold" data-toggle="modal" data-target="#chatmodel">Florinda Carasco</div>
@@ -1090,7 +1090,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-2">
-									<span class="avatar avatar-md brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/10.jpg"><span class="avatar-status bg-success"></span></span>
+									<span class="avatar avatar-md brround cover-image" data-image-src="../../assets/img/faces/10.jpg"><span class="avatar-status bg-success"></span></span>
 								</div>
 								<div class="">
 									<div class="font-weight-semibold" data-toggle="modal" data-target="#chatmodel">Alina Bernier</div>
@@ -1101,7 +1101,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-2">
-									<span class="avatar avatar-md brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/2.jpg"><span class="avatar-status bg-success"></span></span>
+									<span class="avatar avatar-md brround cover-image" data-image-src="../../assets/img/faces/2.jpg"><span class="avatar-status bg-success"></span></span>
 								</div>
 								<div class="">
 									<div class="font-weight-semibold" data-toggle="modal" data-target="#chatmodel">Zula Mclaughin</div>
@@ -1112,7 +1112,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-2">
-									<span class="avatar avatar-md brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/13.jpg"></span>
+									<span class="avatar avatar-md brround cover-image" data-image-src="../../assets/img/faces/13.jpg"></span>
 								</div>
 								<div class="">
 									<div class="font-weight-semibold" data-toggle="modal" data-target="#chatmodel">Isidro Heide</div>
@@ -1123,7 +1123,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-2">
-									<span class="avatar avatar-md brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/12.jpg"><span class="avatar-status bg-success"></span></span>
+									<span class="avatar avatar-md brround cover-image" data-image-src="../../assets/img/faces/12.jpg"><span class="avatar-status bg-success"></span></span>
 								</div>
 								<div class="">
 									<div class="font-weight-semibold" data-toggle="modal" data-target="#chatmodel">Mozelle Belt</div>
@@ -1134,7 +1134,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-2">
-									<span class="avatar avatar-md brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/4.jpg"></span>
+									<span class="avatar avatar-md brround cover-image" data-image-src="../../assets/img/faces/4.jpg"></span>
 								</div>
 								<div class="">
 									<div class="font-weight-semibold" data-toggle="modal" data-target="#chatmodel">Florinda Carasco</div>
@@ -1145,7 +1145,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-2">
-									<span class="avatar avatar-md brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/7.jpg"></span>
+									<span class="avatar avatar-md brround cover-image" data-image-src="../../assets/img/faces/7.jpg"></span>
 								</div>
 								<div class="">
 									<div class="font-weight-semibold" data-toggle="modal" data-target="#chatmodel">Alina Bernier</div>
@@ -1156,7 +1156,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-2">
-									<span class="avatar avatar-md brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/2.jpg"></span>
+									<span class="avatar avatar-md brround cover-image" data-image-src="../../assets/img/faces/2.jpg"></span>
 								</div>
 								<div class="">
 									<div class="font-weight-semibold" data-toggle="modal" data-target="#chatmodel">Zula Mclaughin</div>
@@ -1167,7 +1167,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-2">
-									<span class="avatar avatar-md brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/14.jpg"><span class="avatar-status bg-success"></span></span>
+									<span class="avatar avatar-md brround cover-image" data-image-src="../../assets/img/faces/14.jpg"><span class="avatar-status bg-success"></span></span>
 								</div>
 								<div class="">
 									<div class="font-weight-semibold" data-toggle="modal" data-target="#chatmodel">Isidro Heide</div>
@@ -1178,7 +1178,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-2">
-									<span class="avatar avatar-md brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/11.jpg"></span>
+									<span class="avatar avatar-md brround cover-image" data-image-src="../../assets/img/faces/11.jpg"></span>
 								</div>
 								<div class="">
 									<div class="font-weight-semibold" data-toggle="modal" data-target="#chatmodel">Florinda Carasco</div>
@@ -1189,7 +1189,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-2">
-									<span class="avatar avatar-md brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/9.jpg"></span>
+									<span class="avatar avatar-md brround cover-image" data-image-src="../../assets/img/faces/9.jpg"></span>
 								</div>
 								<div class="">
 									<div class="font-weight-semibold" data-toggle="modal" data-target="#chatmodel">Alina Bernier</div>
@@ -1200,7 +1200,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-2">
-									<span class="avatar avatar-md brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/15.jpg"><span class="avatar-status bg-success"></span></span>
+									<span class="avatar avatar-md brround cover-image" data-image-src="../../assets/img/faces/15.jpg"><span class="avatar-status bg-success"></span></span>
 								</div>
 								<div class="">
 									<div class="font-weight-semibold" data-toggle="modal" data-target="#chatmodel">Zula Mclaughin</div>
@@ -1211,7 +1211,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-2">
-									<span class="avatar avatar-md brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/4.jpg"></span>
+									<span class="avatar avatar-md brround cover-image" data-image-src="../../assets/img/faces/4.jpg"></span>
 								</div>
 								<div class="">
 									<div class="font-weight-semibold" data-toggle="modal" data-target="#chatmodel">Isidro Heide</div>
@@ -1237,7 +1237,7 @@
 					<div class="action-header clearfix">
 						<div class="float-left hidden-xs d-flex ml-2">
 							<div class="img_cont mr-3">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/6.jpg" class="rounded-circle user_img" alt="img">
+								<img src="../../assets/img/faces/6.jpg" class="rounded-circle user_img" alt="img">
 							</div>
 							<div class="align-items-center mt-2">
 								<h4 class="text-white mb-0 font-weight-semibold">Daneil Scott</h4>
@@ -1282,7 +1282,7 @@
 						</div>
 						<div class="d-flex justify-content-start">
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/6.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="../../assets/img/faces/6.jpg" class="rounded-circle user_img_msg" alt="img">
 							</div>
 							<div class="msg_cotainer">
 								Hi, how are you Jenna Side?
@@ -1295,12 +1295,12 @@
 								<span class="msg_time_send">8:55 AM, Today</span>
 							</div>
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/9.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="../../assets/img/faces/9.jpg" class="rounded-circle user_img_msg" alt="img">
 							</div>
 						</div>
 						<div class="d-flex justify-content-start ">
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/6.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="../../assets/img/faces/6.jpg" class="rounded-circle user_img_msg" alt="img">
 							</div>
 							<div class="msg_cotainer">
 								I am good too, thank you for your chat template
@@ -1313,12 +1313,12 @@
 								<span class="msg_time_send">9:05 AM, Today</span>
 							</div>
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/9.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="../../assets/img/faces/9.jpg" class="rounded-circle user_img_msg" alt="img">
 							</div>
 						</div>
 						<div class="d-flex justify-content-start ">
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/6.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="../../assets/img/faces/6.jpg" class="rounded-circle user_img_msg" alt="img">
 							</div>
 							<div class="msg_cotainer">
 								Yo, Can you update Views?
@@ -1331,12 +1331,12 @@
 								<span class="msg_time_send">9:10 AM, Today</span>
 							</div>
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/9.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="../../assets/img/faces/9.jpg" class="rounded-circle user_img_msg" alt="img">
 							</div>
 						</div>
 						<div class="d-flex justify-content-start ">
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/6.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="../../assets/img/faces/6.jpg" class="rounded-circle user_img_msg" alt="img">
 							</div>
 							<div class="msg_cotainer">
 								Yo, Can you update Views?
@@ -1349,12 +1349,12 @@
 								<span class="msg_time_send">9:10 AM, Today</span>
 							</div>
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/9.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="../../assets/img/faces/9.jpg" class="rounded-circle user_img_msg" alt="img">
 							</div>
 						</div>
 						<div class="d-flex justify-content-start ">
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/6.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="../../assets/img/faces/6.jpg" class="rounded-circle user_img_msg" alt="img">
 							</div>
 							<div class="msg_cotainer">
 								Yo, Can you update Views?
@@ -1367,12 +1367,12 @@
 								<span class="msg_time_send">9:10 AM, Today</span>
 							</div>
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/9.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="../../assets/img/faces/9.jpg" class="rounded-circle user_img_msg" alt="img">
 							</div>
 						</div>
 						<div class="d-flex justify-content-start">
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/6.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="../../assets/img/faces/6.jpg" class="rounded-circle user_img_msg" alt="img">
 							</div>
 							<div class="msg_cotainer">
 								Okay Bye, text you later..
@@ -1405,7 +1405,7 @@
 			<div class="modal-content bg-dark border-0 text-white">
 				<div class="modal-body mx-auto text-center p-7">
 					<h5>Valex Video call</h5>
-					<img src="<?php echo base_url(); ?>/assets/img/faces/6.jpg" class="rounded-circle user-img-circle h-8 w-8 mt-4 mb-3" alt="img">
+					<img src="../../assets/img/faces/6.jpg" class="rounded-circle user-img-circle h-8 w-8 mt-4 mb-3" alt="img">
 					<h4 class="mb-1 font-weight-semibold">Daneil Scott</h4>
 					<h6>Calling...</h6>
 					<div class="mt-5">
@@ -1438,7 +1438,7 @@
 			<div class="modal-content border-0">
 				<div class="modal-body mx-auto text-center p-7">
 					<h5>Valex Voice call</h5>
-					<img src="<?php echo base_url(); ?>/assets/img/faces/6.jpg" class="rounded-circle user-img-circle h-8 w-8 mt-4 mb-3" alt="img">
+					<img src="../../assets/img/faces/6.jpg" class="rounded-circle user-img-circle h-8 w-8 mt-4 mb-3" alt="img">
 					<h4 class="mb-1  font-weight-semibold">Daneil Scott</h4>
 					<h6>Calling...</h6>
 					<div class="mt-5">
@@ -1468,7 +1468,7 @@
 	<!-- Footer opened -->
 	<div class="main-footer ht-40">
 		<div class="container-fluid pd-t-0-f ht-100p">
-			<span>Copyright © 2020 ElroSec. Int'l Security Services All rights reserved.</span>
+			<span>Copyright © 2020 <a href="#">Valex</a>. Designed by <a href="https://www.spruko.com/">Spruko</a> All rights reserved.</span>
 		</div>
 	</div>
 	<!-- Footer closed -->
@@ -1480,43 +1480,43 @@
 <a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
 
 <!-- JQuery min js -->
-<script src="<?php echo base_url(); ?>/assets/plugins/jquery/jquery.min.js"></script>
+<script src="../../assets/plugins/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Bundle js -->
-<script src="<?php echo base_url(); ?>/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Ionicons js -->
-<script src="<?php echo base_url(); ?>/assets/plugins/ionicons/ionicons.js"></script>
+<script src="../../assets/plugins/ionicons/ionicons.js"></script>
 
 <!-- Moment js -->
-<script src="<?php echo base_url(); ?>/assets/plugins/moment/moment.js"></script>
+<script src="../../assets/plugins/moment/moment.js"></script>
 
 <!-- P-scroll js -->
-<script src="<?php echo base_url(); ?>/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="<?php echo base_url(); ?>/assets/plugins/perfect-scrollbar/p-scroll.js"></script>
+<script src="../../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="../../assets/plugins/perfect-scrollbar/p-scroll.js"></script>
 
 <!-- Sticky js -->
-<script src="<?php echo base_url(); ?>/assets/js/sticky.js"></script>
+<script src="../../assets/js/sticky.js"></script>
 
 <!-- Rating js-->
-<script src="<?php echo base_url(); ?>/assets/plugins/rating/jquery.rating-stars.js"></script>
-<script src="<?php echo base_url(); ?>/assets/plugins/rating/jquery.barrating.js"></script>
+<script src="../../assets/plugins/rating/jquery.rating-stars.js"></script>
+<script src="../../assets/plugins/rating/jquery.barrating.js"></script>
 
 <!-- Custom Scroll bar Js-->
-<script src="<?php echo base_url(); ?>/assets/plugins/mscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../assets/plugins/mscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 
 <!-- Horizontalmenu js-->
-<script src="<?php echo base_url(); ?>/assets/plugins/horizontal-menu/horizontal-menu-2/horizontal-menu.js"></script>
+<script src="../../assets/plugins/horizontal-menu/horizontal-menu-2/horizontal-menu.js"></script>
 
 <!-- Right-sidebar js -->
-<script src="<?php echo base_url(); ?>/assets/plugins/sidebar/sidebar.js"></script>
-<script src="<?php echo base_url(); ?>/assets/plugins/sidebar/sidebar-custom.js"></script>
+<script src="../../assets/plugins/sidebar/sidebar.js"></script>
+<script src="../../assets/plugins/sidebar/sidebar-custom.js"></script>
 
 <!-- eva-icons js -->
-<script src="<?php echo base_url(); ?>/assets/js/eva-icons.min.js"></script>
+<script src="../../assets/js/eva-icons.min.js"></script>
 
 <!-- custom js -->
-<script src="<?php echo base_url(); ?>/assets/js/custom.js"></script>
+<script src="../../assets/js/custom.js"></script>
 
 </body>
 </html>
