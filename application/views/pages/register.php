@@ -75,10 +75,11 @@
 				<!-- container opened -->
 				<div class="container">
 
+
 					<div class="row">
 						<div class="col-md-4"></div>
 						<div class="col-md-4">
-								<h1 style="font-size:60px;">Register</h1>
+							<h1 style="font-size:60px;">Register</h1>
 						</div>
 						<div class="col-md-4"></div>
 					</div>
@@ -92,10 +93,18 @@
 					<div class="row">
 						<div class="col-md-4"></div>
 						<div class="col-md-4">
-						<div class="main-header-center  ml-4">
-							<input id="username-input" class="form-control" placeholder="email address" type="text">
-						</div>
+							<div class="main-header-center  ml-4">
+								<input id="email-input" class="form-control" placeholder="email address" type="text">
+							</div>
 
+						</div>
+						<div class="col-md-4"></div>
+					</div>
+					<div class="row">
+						<div class="col-md-4"></div>
+						<div class="col-md-4">
+							<div class="main-header-center  ml-4">
+								<h5 id="email-alert" style="color:red;font-weight: 100; display:none;">Please enter a valid email address.</h5></div>
 						</div>
 						<div class="col-md-4"></div>
 					</div>
@@ -105,23 +114,48 @@
 						<div class="col-md-4"></div>
 						<div class="col-md-4">
 							<div class="main-header-center  ml-4">
-						<input id="password-input" class="form-control" placeholder="Password" type="password">
+								<input id="password-input" class="form-control" placeholder="Password" type="password">
 							</div>
 							<div class="col-md-4"></div>
 						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4"></div>
+						<div class="col-md-4">
+							<div class="main-header-center  ml-4">
+								<h5 id="pass-alert" style="color:red;font-weight: 100; display:none;">Please enter a valid password.</h5></div>
+						</div>
+						<div class="col-md-4"></div>
 					</div>
 					<div class="row"><h1></h1></div>
 
 					<div class="row">
 						<div class ="col-md-5"></div>
 						<div class ="col-md-2">
-								<button id="login-btn" class="btn btn-indigo btn-rounded btn-block"><i class="fe fe-log-in" "></i></button>
+							<button id="register-btn" class="btn btn-indigo btn-rounded btn-block"><i class="fe fe-log-in" "></i></button>
 						</div>
 						<div class ="col-md-5"></div>
 
+					</div>
+					<div clas="row"><h1></h1></div>
+
+					<div clas="row">
+						<div id="alert-success" class="alert alert-success" role="alert" style="display:none;">
+							<button aria-label="Close" class="close" data-dismiss="alert" type="button">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<strong>Registered succesfully</strong>, redirecting to personal area
+						</div>
+						<div id="alert-danger" class="alert alert-danger mg-b-0" role="alert" style="display:none;">
+							<button aria-label="Close" class="close" data-dismiss="alert" type="button">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<strong>Oops!</strong> Something went wrong, please try again
 						</div>
 					</div>
+
 				</div>
+			</div>
 				<!-- Container closed -->
 			</div>
 			<!-- main-content closed -->
@@ -826,24 +860,47 @@
 			});
 
 			$('#login-btn').on('click',function(){
-				let username = $('#username-input').val();
+				window.location.href = '<?php echo base_url();?>login';
+			});
+
+			$('#register-btn').on('click',function(){
+				$('#pass-alert').hide();
+				$('#email-alert').hide();
+				$('#alert-success').hide();
+				$('#alert-danger').hide();
+				let brk = false;
+				let email = $('#email-input').val();
 				let pass = $('#password-input').val();
-				console.log(username)
+				if(pass == '' || pass == null){
+					$('#pass-alert').show();
+					brk = true;
+				}
+				let email_regex = new RegExp('^(.+)@(.+)\..+$');
+				if (!email_regex.test(email)) {
+					$('#email-alert').show();
+					brk = true;
+				}
+				if(brk){
+					return false;
+				}
+				console.log(email)
 				console.log(pass)
 				$.ajax({
 					type: "POST",
-					url:"<?php echo base_url(); ?>main/login_check",
+					url:"<?php echo base_url(); ?>actions/register",
 					dataType: 'text',
-					data: { username:  username , password: pass },
+					data: { email:  email , password: pass },
 					success: function(result){
 						if(result){
-							alert("logged in successfully");
+							$('.alert-success').show();
+							setTimeout(function(){
+								window.location.href = '<?php echo base_url();?>/actions/personal_area';
+							},1000)
 						}else{
-							alert('failed to login')
+							$('.alert-danger').show();
 						}
 					}
 				});
-
 			});
 
 		</script>

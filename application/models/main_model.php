@@ -16,7 +16,11 @@ class main_model extends CI_Model
 			$row_arr = $query->row_array();
 			$stored_password = $row_arr['password'];
 			if($this->encryption->decrypt($stored_password) === $password){
-				return true;
+				if($row_arr['is_admin']){
+					return 'admin';
+				}else{
+					return 'login';
+				}
 			}
 			else{
 				return false;
@@ -39,7 +43,15 @@ class main_model extends CI_Model
 	}
 
 	public function register($data){
-		$this->db->insert($data);
-		return true;
+		$this->db->insert('users',$data);
+		return ($this->db->affected_rows() != 1) ? false : true;
+	}
+
+	public function getUsersData(){
+		$q =  <<<HEREDOC
+select u.email,s.* from users u join services s on u.id = s.user_id 
+HEREDOC;
+		$res = $this->db->query($q);
+		return $res->result_array();
 	}
 }
