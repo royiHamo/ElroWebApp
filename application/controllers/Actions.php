@@ -36,8 +36,17 @@ class Actions extends CI_Controller
 	{
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
+		$services = $this->input->post('services');
 		$data = array("email" => $email,
-			"password" => $this->encryption->encrypt($password));
+					  "password" => $this->encryption->encrypt($password));
+
+		foreach ($services as $key => $value){
+			$data[$key] = $value;
+		}
+
+		//TODO: insert to register
+
+		print_r($data);die;
 		$res = $this->main_model->register($data);
 		if ($res) {
 			$session_data = array('email' => $email);

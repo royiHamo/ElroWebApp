@@ -217,7 +217,7 @@
 										<p class="mb-0 tx-12 text-white op-7">Blocked attempts</p>
 									</div>
 									<span class="float-right my-auto ml-auto">
-												<input id="brutefore_detector" class="form-control chkbxs" type="checkbox" />
+												<input id="bruteforce_detector" class="form-control chkbxs" type="checkbox" />
 												<span class="text-white op-7"> active</span>
 											</span>
 								</div>
@@ -1307,9 +1307,9 @@
 		active_services_arr = (active_services_arr[0]);
 		console.log(active_services_arr);
 		$.each($('.chkbxs'),function(ind,chkbx){
-			$current_id = $(chkbx).attr('id');
-			$status = (active_services_arr[$current_id] === '1')? true : false;
-			$(chkbx).prop( "checked", $status )
+			let current_id = $(chkbx).attr('id');
+			let status = (active_services_arr[current_id] === '1')? true : false;
+			$(chkbx).prop( "checked", status )
 		});
 	});
 
