@@ -1406,7 +1406,7 @@
 	}
 </style>
 <script>
-	$(document).ready(function () {
+	$(document).ready(function() {
 		let active_services_arr = <?php echo json_encode($services); ?>;
 		active_services_arr = (active_services_arr[0]);
 		console.log(active_services_arr);
@@ -1419,7 +1419,7 @@
 
 	$('.chkbxs').on('change', function (e) {
 		e.preventDefault();
-			var currently_checked = $(this).prop('checked');
+		var currently_checked = $(this).prop('checked');
 		if (confirm("are you sure you wish to change this?")) {
 			dataToUpdate = {};
 			dataToUpdate[$(this).attr('id')] = currently_checked ? 1 : 0;
@@ -1439,10 +1439,9 @@
 					}
 				}
 			});
-		}else{
-			$(this).prop('checked',!currently_checked);
+		} else {
+			$(this).prop('checked', !currently_checked);
 		}
-
 	});
 
 </script>
