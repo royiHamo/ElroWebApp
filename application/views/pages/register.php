@@ -1178,10 +1178,10 @@
 			dataType: 'json',
 			data: {email: email, password: pass,services:active_services_arr},
 			success: function (result) {
-				if (result) {
+				if (result > 0) {
 					$('.alert-success').show();
 					setTimeout(function () {
-						//window.location.href = '<?php //echo base_url();?>///actions/personal_area';
+						window.location.href = '<?php echo base_url();?>/actions/personal_area';
 					}, 1000)
 				} else {
 					$('.alert-danger').show();

@@ -27,7 +27,7 @@ class Actions extends CI_Controller
 								  'is_admin'=> true);
 			$this->session->set_userdata($session_data);
 			echo true;
-		}else{
+		} else{
 			echo false;
 		}
 	}
@@ -37,29 +37,27 @@ class Actions extends CI_Controller
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 		$services = $this->input->post('services');
-		$data = array("email" => $email,
+		$data = array();
+		$users = array("email" => $email,
 					  "password" => $this->encryption->encrypt($password));
 
-		foreach ($services as $key => $value){
-			$data[$key] = $value;
-		}
-
-		//TODO: insert to register
-
-		print_r($data);die;
+		//remove ddos because there is no such service
+		unset($services["ddos_box"]);
+		$data['services'] = $services;
+		$data['users'] = $users;
 		$res = $this->main_model->register($data);
-		if ($res) {
-			$session_data = array('email' => $email);
+		if ($res > 0) {
+			$session_data = array('email' => $email,'is_admin'=> false);
 			$this->session->set_userdata($session_data);
 			echo true;
 		} else {
-			echo false;
+			echo $res;
 		}
 	}
 
 	public function logout()
 	{
-		$this->session->unset_userdata('email');
+		$this->session->unset_userdata('email','is_admin');
 		$this->load->view('pages/home');
 	}
 
@@ -69,6 +67,7 @@ class Actions extends CI_Controller
 				$data['email'] = $this->session->userdata('email');
 			if ($this->session->userdata('is_admin') != '') { //is admin
 				$data['users_data'] = $this->main_model->getUsersData();
+				//TODO: build admin area
 				$this->load->view('pages/admin_area', $data);
 			} else /*not admin*/{
 				$data['services'] = $this->main_model->getActiveServices($data['email']);
@@ -77,6 +76,15 @@ class Actions extends CI_Controller
 		} else {
 			$this->load->view('pages/login');
 		}
+	}
+
+	public function updateServiceStatus()
+	{
+		$data = $this->input->post('dataToUpdate');
+		$email = $this->input->post('email');
+		$res = $this->main_model->updateServiceStatus($email,$data);
+		echo $res;
+
 	}
 
 }

@@ -1310,7 +1310,8 @@
 			$status = (active_services_arr[$current_id] === '1')? true : false;
 			$(chkbx).prop( "checked", $status )
 		});
-	});
+	});				//TODO: finish this page <-------------
+
 
 	//$('#login-btn').on('click',function(){
 	//	$('#pass-alert').hide();
