@@ -570,7 +570,7 @@
 					<div class="row">
 						<div class="col-md-9">
 						<div class="main-header-center  ml-4">
-						<input class="form-control" placeholder="Type in the URL you wish to safely visit..." type="search"><button style="color:white" class="btn search_btn"><i class="fe fe-search"></i></button>
+						<input id="url_input" class="form-control" placeholder="Type in the URL you wish to safely visit..." type="search"><button style="color:white" id="search_btn" class="btn search_btn"><i class="fe fe-search"></i></button>
 						</div>
 
 						</div>
@@ -1145,7 +1145,7 @@
 							<div class="card-footer">
 								<div class="msb-reply d-flex">
 									<div class="input-group">
-										<input type="text" class="form-control " placeholder="Typing....">
+										<input type="text"  class="form-control " placeholder="Typing....">
 										<div class="input-group-append ">
 											<button type="button" class="btn btn-primary ">
 												<i class="far fa-paper-plane" aria-hidden="true"></i>
@@ -1266,6 +1266,28 @@
 
 		<!-- custom js -->
 		<script src="<?php echo base_url(); ?>/assets/js/custom.js"></script>
-
+		<script>
+			$(document).ready(function(){
+				$('#search_btn').on('click',function(){
+					var url = $('#url_input').val();
+					$.ajax({
+						type: "POST",
+						url:"<?php echo base_url(); ?>actions/web_report",
+						dataType: 'text',
+						data: { url:  url },
+						success: function(result){
+							if(result){
+								$('.alert-success').show();
+								setTimeout(function(){
+									//window.location.href = '<?php //echo base_url();?>//actions/personal_area';
+								},1000)
+							}else{
+								$('.alert-danger').show();
+							}
+						}
+					});
+				});
+			});
+		</script>
 	</body>
 </html>

@@ -9,6 +9,7 @@ class Actions extends CI_Controller
 		parent::__construct();
 		$this->load->model('Main_model');
 		$this->load->library('encryption');
+		$this->load->helper("security");
 	}
 
 	public function pre_login(){
@@ -24,9 +25,9 @@ class Actions extends CI_Controller
 
 	public function login()
 	{
-		$email = $this->input->post('email');
-		$password = $this->input->post('password');
-
+		$email = $this->security->xss_clean($this->input->post('email'));
+		$password = $this->security->xss_clean($this->input->post('password'));
+		print_r($email);die;
 		$res = $this->Main_model->login($email, $password);
 		if ($res === 'login'){
 			$session_data = array('email' => $email,
@@ -45,9 +46,9 @@ class Actions extends CI_Controller
 
 	public function register()
 	{
-		$email = $this->input->post('email');
-		$password = $this->input->post('password');
-		$services = $this->input->post('services');
+		$email = $this->security->xss_clean($this->input->post('email'));
+		$password = $this->security->xss_clean($this->input->post('password'));
+		$services = $this->security->xss_clean($this->input->post('services'));
 		$data = array();
 		$users = array("email" => $email,
 					  "password" => $this->encryption->encrypt($password));
@@ -99,8 +100,8 @@ class Actions extends CI_Controller
 
 	public function updateServiceStatus()
 	{
-		$data = $this->input->post('dataToUpdate');
-		$email = $this->input->post('email');
+		$data = $this->security->xss_clean($this->input->post('dataToUpdate'));
+		$email = $this->security->xss_clean($this->input->post('email'));
 		$res = $this->Main_model->updateServiceStatus($email,$data);
 		echo $res;
 	}
@@ -115,7 +116,10 @@ class Actions extends CI_Controller
 		}else{
 			$this->load->view('errors/index.html');
 		}
+	}
 
+	public function web_report(){
+		$url = $this->security->xss_clean($this->input->post('url'));
 	}
 
 }
