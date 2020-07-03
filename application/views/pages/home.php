@@ -1251,13 +1251,6 @@
 		<!-- Moment js -->
 		<script src="<?php echo base_url(); ?>/assets/plugins/moment/moment.js"></script>
 
-		<!-- P-scroll js -->
-		<script src="<?php echo base_url(); ?>/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-		<script src="<?php echo base_url(); ?>/assets/plugins/perfect-scrollbar/p-scroll.js"></script>
-
-		<!-- Sticky js -->
-		<script src="<?php echo base_url(); ?>/assets/js/sticky.js"></script>
-
 		<!-- eva-icons js -->
 		<script src="<?php echo base_url(); ?>/assets/js/eva-icons.min.js"></script>
 
@@ -1270,10 +1263,6 @@
 
 		<!-- Horizontalmenu js-->
 		<script src="<?php echo base_url(); ?>/assets/plugins/horizontal-menu/horizontal-menu-2/horizontal-menu.js"></script>
-
-		<!-- Right-sidebar js -->
-		<script src="<?php echo base_url(); ?>/assets/plugins/sidebar/sidebar.js"></script>
-		<script src="<?php echo base_url(); ?>/assets/plugins/sidebar/sidebar-custom.js"></script>
 
 		<!-- custom js -->
 		<script src="<?php echo base_url(); ?>/assets/js/custom.js"></script>

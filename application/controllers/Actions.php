@@ -7,7 +7,7 @@ class Actions extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('main_model');
+		$this->load->model('Main_model');
 		$this->load->library('encryption');
 	}
 
@@ -16,7 +16,7 @@ class Actions extends CI_Controller
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 
-		$res = $this->main_model->login($email, $password);
+		$res = $this->Main_model->login($email, $password);
 		if ($res === 'login'){
 			$session_data = array('email' => $email,
 									'is_admin'=> false);
@@ -45,7 +45,7 @@ class Actions extends CI_Controller
 		unset($services["ddos_box"]);
 		$data['services'] = $services;
 		$data['users'] = $users;
-		$res = $this->main_model->register($data);
+		$res = $this->Main_model->register($data);
 		if ($res > 0) {
 			$session_data = array('email' => $email,'is_admin'=> false);
 			$this->session->set_userdata($session_data);
@@ -66,11 +66,11 @@ class Actions extends CI_Controller
 		if ($this->session->userdata('email')) {
 				$data['email'] = $this->session->userdata('email');
 			if ($this->session->userdata('is_admin') != '') { //is admin
-				$data['users_data'] = $this->main_model->getUsersData();
+				$data['users_data'] = $this->Main_model->getUsersData();
 				//TODO: build admin area
 				$this->load->view('pages/admin_area', $data);
 			} else /*not admin*/{
-				$data['services'] = $this->main_model->getActiveServices($data['email']);
+				$data['services'] = $this->Main_model->getActiveServices($data['email']);
 				$this->load->view('pages/personal_area', $data);
 			}
 		} else {
@@ -82,7 +82,7 @@ class Actions extends CI_Controller
 	{
 		$data = $this->input->post('dataToUpdate');
 		$email = $this->input->post('email');
-		$res = $this->main_model->updateServiceStatus($email,$data);
+		$res = $this->Main_model->updateServiceStatus($email,$data);
 		echo $res;
 
 	}

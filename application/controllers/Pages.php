@@ -6,7 +6,7 @@ class Pages extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('main_model');
+		$this->load->model('Main_model');
 		$this->load->library('encryption');
 	}
 
