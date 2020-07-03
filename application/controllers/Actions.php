@@ -27,7 +27,6 @@ class Actions extends CI_Controller
 	{
 		$email = $this->security->xss_clean($this->input->post('email'));
 		$password = $this->security->xss_clean($this->input->post('password'));
-		print_r($email);die;
 		$res = $this->Main_model->login($email, $password);
 		if ($res === 'login'){
 			$session_data = array('email' => $email,
