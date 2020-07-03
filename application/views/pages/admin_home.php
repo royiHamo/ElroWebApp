@@ -706,15 +706,15 @@
 						<div class="card-body">
 							<div class="total-revenue">
 								<div>
-									<h4>120,750</h4>
+									<h4><?php echo $new_users; ?></h4>
 									<label><span class="bg-primary"></span>new clients</label>
 								</div>
 								<div>
-									<h4>56,108</h4>
+									<h4><?php echo $abandoned_users; ?></h4>
 									<label><span class="bg-danger"></span>abandoned clients</label>
 								</div>
 								<div>
-									<h4>32,895</h4>
+									<h4><?php echo $paying_users; ?></h4>
 									<label><span class="bg-warning"></span>paying clients</label>
 								</div>
 							</div>
@@ -1514,7 +1514,7 @@
 	<!-- Footer opened -->
 	<div class="main-footer ht-40">
 		<div class="container-fluid pd-t-0-f ht-100p">
-			<span>Copyright © 2020 <a href="#">Valex</a>. Designed by <a href="https://www.spruko.com/">Spruko</a> All rights reserved.</span>
+			<span>Copyright © 2020 ElroSec. Int'l Security Services All rights reserved.</span>
 		</div>
 	</div>
 	<!-- Footer closed -->
@@ -1605,6 +1605,97 @@
 		//	$status = (active_services_arr[$current_id] === '1')? true : false;
 		//	$(chkbx).prop( "checked", $status )
 		//});
+		/* Apexcharts (#bar) */
+		var optionsBar = {
+			chart: {
+				height: 249,
+				type: 'bar',
+				toolbar: {
+					show: false,
+				},
+				fontFamily: 'Nunito, sans-serif',
+				// dropShadow: {
+				//   enabled: true,
+				//   top: 1,
+				//   left: 1,
+				//   blur: 2,
+				//   opacity: 0.2,
+				// }
+			},
+			colors: ["#036fe7", '#f93a5a', '#f7a556'],
+			plotOptions: {
+				bar: {
+					dataLabels: {
+						enabled: false
+					},
+					columnWidth: '42%',
+					endingShape: 'rounded',
+				}
+			},
+			dataLabels: {
+				enabled: false
+			},
+			stroke: {
+				show: true,
+				width: 2,
+				endingShape: 'rounded',
+				colors: ['transparent'],
+			},
+			responsive: [{
+				breakpoint: 576,
+				options: {
+					stroke: {
+						show: true,
+						width: 1,
+						endingShape: 'rounded',
+						colors: ['transparent'],
+					},
+				},
+
+
+			}],
+			series: [{
+				name: 'New',
+				data: [74, 85, 57, 56, 76, 35, 61, 98, 36 , 50, 48, 29, 57]
+			}, {
+				name: 'Abandoned',
+				data: [46, 35, 101, 98, 44, 55, 57, 56, 55 ,34, 79, 46,76]
+			}, {
+				name: 'Paying',
+				data: [26, 35, 41, 78, 34, 65, 27, 46, 37, 65, 49, 23,49]
+			}],
+			xaxis: {
+				categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+			},
+			fill: {
+				opacity: 1
+			},
+			legend: {
+				show: false,
+				floating: true,
+				position: 'top',
+				horizontalAlign: 'left',
+				// offsetY: -36
+
+			},
+			// title: {
+			//   text: 'Financial Information',
+			//   align: 'left',
+			// },
+			tooltip: {
+				y: {
+					formatter: function (val) {
+						return "$ " + val + " thousands"
+					}
+				}
+			}
+		}
+		new ApexCharts(document.querySelector('#bar'), optionsBar).render();
+
+		/* Apexcharts (#bar) closed */
+
+
+
 	});
 
 </script>

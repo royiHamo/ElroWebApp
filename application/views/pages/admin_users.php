@@ -23,7 +23,7 @@
 	<meta name="Keywords" content="admin,admin dashboard,admin dashboard template,admin panel template,admin template,admin theme,bootstrap 4 admin template,bootstrap 4 dashboard,bootstrap admin,bootstrap admin dashboard,bootstrap admin panel,bootstrap admin template,bootstrap admin theme,bootstrap dashboard,bootstrap form template,bootstrap panel,bootstrap ui kit,dashboard bootstrap 4,dashboard design,dashboard html,dashboard template,dashboard ui kit,envato templates,flat ui,html,html and css templates,html dashboard template,html5,jquery html,premium,premium quality,sidebar bootstrap 4,template admin bootstrap 4"/>
 
 	<!-- Title -->
-	<title> Valex -  Premium dashboard ui bootstrap rwd admin html5 template </title>
+	<title> ElroSec. Users </title>
 
 	<!-- Favicon -->
 	<link rel="icon" href="<?php echo base_url(); ?>/assets/img/brand/favicon.png" type="image/x-icon"/>
@@ -70,10 +70,10 @@
 	<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 	<aside class="app-sidebar sidebar-scroll">
 		<div class="main-sidebar-header active">
-			<a class="desktop-logo logo-light active" href="index.html"><img src="<?php echo base_url(); ?>/assets/img/brand/logo.png" class="main-logo" alt="logo"></a>
-			<a class="desktop-logo logo-dark active" href="index.html"><img src="<?php echo base_url(); ?>/assets/img/brand/logo-white1.png" class="main-logo dark-theme" alt="logo"></a>
-			<a class="logo-icon mobile-logo icon-light active" href="index.html"><img src="<?php echo base_url(); ?>/assets/img/brand/favicon.png" class="logo-icon" alt="logo"></a>
-			<a class="logo-icon mobile-logo icon-dark active" href="index.html"><img src="<?php echo base_url(); ?>/assets/img/brand/favicon-white.png" class="logo-icon dark-theme" alt="logo"></a>
+			<a class="desktop-logo logo-light active" href="<?php echo base_url();?>"><img src="<?php echo base_url(); ?>/assets/img/brand/logo.png" class="main-logo" alt="logo"></a>
+			<a class="desktop-logo logo-dark active" href="<?php echo base_url();?>"><img src="<?php echo base_url(); ?>/assets/img/brand/logo-white1.png" class="main-logo dark-theme" alt="logo"></a>
+			<a class="logo-icon mobile-logo icon-light active" href="<?php echo base_url();?>"><img src="<?php echo base_url(); ?>/assets/img/brand/favicon.png" class="logo-icon" alt="logo"></a>
+			<a class="logo-icon mobile-logo icon-dark active" href="<?php echo base_url();?>"><img src="<?php echo base_url(); ?>/assets/img/brand/favicon-white.png" class="logo-icon dark-theme" alt="logo"></a>
 		</div>
 		<div class="main-sidemenu">
 			<div class="app-sidebar__user clearfix">
@@ -411,7 +411,7 @@
 									<th class="border-bottom-0">CSRF</th>
 									<th class="border-bottom-0">BOTS</th>
 									<th class="border-bottom-0">XML</th>
-									<th class="border-bottom-0">Cookie Poison</th>
+									<th class="border-bottom-0">Cookie Poisoning</th>
 									<th class="border-bottom-0">Brute Force</th>
 								</tr>
 								</thead>
@@ -1073,7 +1073,7 @@
 	<!-- Footer opened -->
 	<div class="main-footer ht-40">
 		<div class="container-fluid pd-t-0-f ht-100p">
-			<span>Copyright © 2020 <a href="#">Valex</a>. Designed by <a href="https://www.spruko.com/">Spruko</a> All rights reserved.</span>
+			<span>Copyright © 2020 ElroSec. Int'l Security Services All rights reserved.</span>
 		</div>
 	</div>
 	<!-- Footer closed -->
@@ -1196,6 +1196,8 @@
 					user['bruteforce_detector']
 				] ).draw( false );
 			});
+
+			//TODO: support export buttons
 			// } );
 			//
 			// // Automatically add a first row of data

@@ -90,6 +90,10 @@ class Actions extends CI_Controller
 
 	public function admin_login(){
 		$data['email'] = $this->session->userdata('email');
+		$statistics = $this->Main_model->get_costumers_statistics();
+		$data['new_users'] = $statistics['new_users'];
+		$data['abandoned_users'] = $statistics['abandoned_users'];
+		$data['paying_users'] = $statistics['paying_users'];
 		$this->load->view('pages/admin_home', $data);
 	}
 
