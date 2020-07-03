@@ -70,7 +70,7 @@ HEREDOC;
 
 	public function getUsersData(){
 		$q =  <<<HEREDOC
-select u.email,s.* from users u join services s on u.id = s.user_id 
+select u.email,u.active,u.registered_on,s.* from users u join services s on u.id = s.user_id where u.is_admin = 0 
 HEREDOC;
 		$res = $this->db->query($q);
 		return $res->result_array();

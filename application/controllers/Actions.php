@@ -11,6 +11,17 @@ class Actions extends CI_Controller
 		$this->load->library('encryption');
 	}
 
+	public function pre_login(){
+		$data['email'] = $this->session->userdata('email');
+		$data['is_admin'] = $this->session->userdata('is_admin');
+		//if its not an anonymous, automatically redirect him
+		if(isset($data['email']) && isset($data['is_admin'])){
+			$this->personal_area();
+		}else{
+			$this->load->view("pages/login");
+		}
+	}
+
 	public function login()
 	{
 		$email = $this->input->post('email');
@@ -57,7 +68,8 @@ class Actions extends CI_Controller
 
 	public function logout()
 	{
-		$this->session->unset_userdata('email','is_admin');
+		$this->session->unset_userdata('email');
+		$this->session->unset_userdata('is_admin');
 		$this->load->view('pages/home');
 	}
 
@@ -65,10 +77,8 @@ class Actions extends CI_Controller
 	{
 		if ($this->session->userdata('email')) {
 				$data['email'] = $this->session->userdata('email');
-			if ($this->session->userdata('is_admin') != '') { //is admin
-				$data['users_data'] = $this->Main_model->getUsersData();
-				//TODO: build admin area
-				$this->load->view('pages/admin_area', $data);
+			if ($this->session->userdata('is_admin') != '') { //it's an admin
+				$this->admin_login();
 			} else /*not admin*/{
 				$data['services'] = $this->Main_model->getActiveServices($data['email']);
 				$this->load->view('pages/personal_area', $data);
@@ -78,12 +88,29 @@ class Actions extends CI_Controller
 		}
 	}
 
+	public function admin_login(){
+		$data['email'] = $this->session->userdata('email');
+		$this->load->view('pages/admin_home', $data);
+	}
+
 	public function updateServiceStatus()
 	{
 		$data = $this->input->post('dataToUpdate');
 		$email = $this->input->post('email');
 		$res = $this->Main_model->updateServiceStatus($email,$data);
 		echo $res;
+	}
+
+	public function users()
+	{
+		$data['email'] = $this->session->userdata('email');
+		$data['is_admin'] = $this->session->userdata('is_admin');
+		if($data['is_admin'] != '') { // it's an admin
+			$data['users'] = $this->Main_model->getUsersData();
+			$this->load->view('pages/admin_users',$data);
+		}else{
+			$this->load->view('errors/index.html');
+		}
 
 	}
 

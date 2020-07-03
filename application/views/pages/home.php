@@ -75,7 +75,7 @@
 					</div>
 					<!-- search -->
 					<div class="main-header-right">
-						<a href="<?php echo base_url(); ?>pages/index/login" id="login_btn">Login</a>&nbsp;&nbsp;
+						<a href="<?php echo base_url(); ?>actions/pre_login" id="login_btn">Login</a>&nbsp;&nbsp;
 						<a href="<?php echo base_url(); ?>pages/index/register" id="register_btn">Register</a></div>
 <!--						<ul class="nav">-->
 <!--							<li class="">-->
