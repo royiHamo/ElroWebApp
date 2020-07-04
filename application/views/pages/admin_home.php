@@ -120,9 +120,9 @@
 						<a class="open-toggle" href="#"><i class="header-icon fe fe-align-left" ></i></a>
 						<a class="close-toggle" href="#"><i class="header-icons fe fe-x"></i></a>
 					</div>
-					<div class="main-header-center ml-3 d-sm-none d-md-none d-lg-block">
-						<input class="form-control" placeholder="Search for anything..." type="search"> <button class="btn"><i class="fas fa-search d-none d-md-block"></i></button>
-					</div>
+<!--					<div class="main-header-center ml-3 d-sm-none d-md-none d-lg-block">-->
+<!--						<input class="form-control" placeholder="Search for anything..." type="search"> <button class="btn"><i class="fas fa-search d-none d-md-block"></i></button>-->
+<!--					</div>-->
 				</div>
 				<div class="main-header-right">
 					<ul class="nav">
@@ -373,11 +373,6 @@
 <!--								<a class="dropdown-item" href=""><i class="bx bx-slider-alt"></i> Account Settings</a>-->
 								<a class="dropdown-item" href="<?php echo base_url(); ?>actions/logout"><i class="bx bx-log-out"></i> Sign Out</a>
 							</div>
-						</div>
-						<div class="dropdown main-header-message right-toggle">
-							<a class="nav-link pr-0" data-toggle="sidebar-right" data-target=".sidebar-right">
-								<svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-							</a>
 						</div>
 					</div>
 				</div>
@@ -753,7 +748,7 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="d-flex align-items-center pb-2">
-										<p class="mb-0">Total Month Sales</p>
+										<p class="mb-0">Total Income so far</p>
 									</div>
 									<h4 class="font-weight-bold mb-2">$7,590</h4>
 									<div class="progress progress-style progress-sm">

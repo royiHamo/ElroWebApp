@@ -1408,9 +1408,12 @@
 		var currently_checked = $(this).prop('checked');
 		if (confirm("are you sure you wish to change this?")) {
 			var dataToUpdate = {};
-			dataToUpdate[$(this).attr('id')] = currently_checked ? 1 : 0;
+			var current_service = $(this).attr('id');
+			dataToUpdate[current_service] = currently_checked ? 1 : 0;
 
 			var current_web = $('#webs-select option:selected').text();
+			var current_val = $('#webs-select option:selected').val();
+			console.log(current_val);
 			$.ajax({
 				type: "POST",
 				url: "<?php echo base_url(); ?>actions/updateServiceStatus",
@@ -1421,8 +1424,12 @@
 					if (result) {
 						if (currently_checked) {
 							$(this).prop('checked', false);
+							//update global array as well
+							websites_arr[current_val][current_service] =  0;
 						} else {
 							$(this).prop('checked', true);
+							//update global array as well
+							websites_arr[current_val][current_service] = 1;
 						}
 					}
 				}

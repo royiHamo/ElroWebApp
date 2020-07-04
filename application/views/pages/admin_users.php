@@ -405,6 +405,7 @@
 								<tr>
 									<th class="border-bottom-0">Email</th>
 									<th class="border-bottom-0">Active</th>
+									<th class="border-bottom-0">Website</th>
 									<th class="border-bottom-0">Registered On</th>
 									<th class="border-bottom-0">SQL</th>
 									<th class="border-bottom-0">XSS</th>
@@ -1186,6 +1187,7 @@
 				t.row.add( [
 					user['email'],
 					user['active'],
+					user['website'],
 					user['registered_on'],
 					user['sql_detector'],
 					user['xss_detector'],
@@ -1193,8 +1195,7 @@
 					user['bots_detector'],
 					user['xml_detector'],
 					user['cookie_poisoning_detector'],
-					user['bruteforce_detector'],
-					user['website']
+					user['bruteforce_detector']
 				] ).draw( false );
 			});
 
