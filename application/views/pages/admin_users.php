@@ -1193,7 +1193,8 @@
 					user['bots_detector'],
 					user['xml_detector'],
 					user['cookie_poisoning_detector'],
-					user['bruteforce_detector']
+					user['bruteforce_detector'],
+					user['website']
 				] ).draw( false );
 			});
 

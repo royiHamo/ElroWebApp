@@ -48,12 +48,14 @@ class Actions extends CI_Controller
 		$email = $this->security->xss_clean($this->input->post('email'));
 		$password = $this->security->xss_clean($this->input->post('password'));
 		$services = $this->security->xss_clean($this->input->post('services'));
+		$website = $this->security->xss_clean($this->input->post('website'));
 		$data = array();
 		$users = array("email" => $email,
 					  "password" => $this->encryption->encrypt($password));
 
 		//remove ddos because there is no such service
 		unset($services["ddos_box"]);
+		$services['website'] = $website;
 		$data['services'] = $services;
 		$data['users'] = $users;
 		$res = $this->Main_model->register($data);
@@ -75,9 +77,9 @@ class Actions extends CI_Controller
 
 	public function personal_area()
 	{
-		if ($this->session->userdata('email')) {
-				$data['email'] = $this->session->userdata('email');
-			if ($this->session->userdata('is_admin') != '') { //it's an admin
+		if ($this->security->xss_clean($this->session->userdata('email'))) {
+				$data['email'] = $this->security->xss_clean($this->session->userdata('email'));
+			if ($this->security->xss_clean($this->session->userdata('is_admin')) != '') { //it's an admin
 				$this->admin_login();
 			} else /*not admin*/{
 				$data['services'] = $this->Main_model->getActiveServices($data['email']);
@@ -89,7 +91,7 @@ class Actions extends CI_Controller
 	}
 
 	public function admin_login(){
-		$data['email'] = $this->session->userdata('email');
+		$data['email'] = $this->security->xss_clean($this->session->userdata('email'));
 		$statistics = $this->Main_model->get_costumers_statistics();
 		$data['new_users'] = $statistics['new_users'];
 		$data['abandoned_users'] = $statistics['abandoned_users'];
@@ -101,14 +103,15 @@ class Actions extends CI_Controller
 	{
 		$data = $this->security->xss_clean($this->input->post('dataToUpdate'));
 		$email = $this->security->xss_clean($this->input->post('email'));
-		$res = $this->Main_model->updateServiceStatus($email,$data);
+		$website = $this->security->xss_clean($this->input->post('website'));
+		$res = $this->Main_model->updateServiceStatus($email,$data,$website);
 		echo $res;
 	}
 
 	public function users()
 	{
-		$data['email'] = $this->session->userdata('email');
-		$data['is_admin'] = $this->session->userdata('is_admin');
+		$data['email'] = $this->security->xss_clean($this->session->userdata('email'));
+		$data['is_admin'] = $this->security->xss_clean($this->session->userdata('is_admin'));
 		if($data['is_admin'] != '') { // it's an admin
 			$data['users'] = $this->Main_model->getUsersData();
 			$this->load->view('pages/admin_users',$data);
@@ -119,6 +122,26 @@ class Actions extends CI_Controller
 
 	public function web_report(){
 		$url = $this->security->xss_clean($this->input->post('url'));
+		//TODO: finish this<--
+	}
+
+
+	public function addNewWebsite(){
+		$url = $this->security->xss_clean($this->input->post('url'));
+		$services = $this->security->xss_clean($this->input->post('services'));
+		$email = $this->security->xss_clean($this->session->userdata('email'));
+		$services['website'] = $url;
+		//remove ddos because there is no such service
+		unset($services["ddos_box"]);
+
+		$res = $this->Main_model->addNewWebsite($email,$services);
+		echo $res;
+	}
+
+	public function getActiveServices()
+	{
+		$email = $this->security->xss_clean($this->session->userdata('email'));
+		echo json_encode($this->Main_model->getActiveServices($email));
 	}
 
 }

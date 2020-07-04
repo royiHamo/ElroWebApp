@@ -117,7 +117,15 @@
 				</div>
 			</div>
 			<!-- /breadcrumb -->
+			<!-- row -->
+			<div class="row row-sm">
+				<h4>Showing settings for:</h4>
 
+				<select id="webs-select" class="form-control">
+				</select></br></br></br></br>
+			</div>
+
+			<!-- row closing -->
 			<!-- row -->
 			<div class="row row-sm">
 				<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
@@ -1092,6 +1100,183 @@
 		</div>
 	</div>
 	<!--/Sidebar-right-->
+	<!-- Modal effects -->
+	<div class="modal" id="add_web_modal">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content modal-content-demo">
+				<div class="modal-header">
+					<h6 class="modal-title">Add a new Web-site</h6>
+					<button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+								aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<h6>Website Details</h6>
+					<p>here you can define the settings for the new website you wish to protect</p></br>
+					<input type="text" class="form-control" id="website-url-modal" placeholder="URL"></br>
+					<div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="row">
+									<div class="col-md-3">
+										<div class="row">
+											<div class="col">
+												<input id="sql_detector" class="form-control modal_chkbxs" checked
+													   type="checkbox"
+													   style="width:20px;height:20px;"/>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col">
+												<span class="text-white op-7"> sql</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="row">
+											<div class="col">
+												<input id="csrf_detector" class="form-control modal_chkbxs" checked
+													   type="checkbox"
+													   style="width:20px;height:20px;"/>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col">
+												<span class="text-white op-7"> csrf</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="row">
+											<div class="col">
+												<input id="xml_detector" class="form-control modal_chkbxs" checked
+													   type="checkbox"
+													   style="width:20px;height:20px;"/>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col">
+												<span class="text-white op-7"> xml</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="row">
+											<div class="col">
+												<input id="xss_detector" class="form-control modal_chkbxs" checked
+													   type="checkbox"
+													   style="width:20px;height:20px;"/>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col">
+												<span class="text-white op-7"> xss</span>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="row">
+									<div class="col-md-3">
+
+										<div class="row">
+											<div class="col">
+
+												<input id="bruteforce_detector"
+													   class="form-control modal_chkbxs" checked
+													   type="checkbox"
+													   style="width:20px;height:20px;"/>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col">
+												<span class="text-white op-7"> brute force</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="row">
+											<div class="col">
+
+												<input id="bots_detector"
+													   class="form-control modal_chkbxs" checked
+													   type="checkbox"
+													   style="width:20px;height:20px;"/>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col">
+												<span class="text-white op-7"> bots</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="row">
+											<div class="col">
+												<input id="cookie_poisoning_detector"
+													   class="form-control modal_chkbxs" checked
+													   type="checkbox"
+													   style="width:20px;height:20px;"/>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col">
+												<span class="text-white op-7"> cookie poison</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="row">
+											<div class="col">
+												<input id="ddos_box" class="form-control modal_chkbxs" checked
+													   type="checkbox"
+													   style="width:20px;height:20px;"/>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col">
+												<span class="text-white op-7"> ddos</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn ripple btn-primary" id="add-website" type="button">Add website</button>
+					<button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Modal effects-->
+
+	<!-- Modal alert message -->
+	<div class="modal" id="success_modal">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content tx-size-sm">
+				<div class="modal-body tx-center pd-y-20 pd-x-20">
+					<button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button> <i class="icon ion-ios-checkmark-circle-outline tx-100 tx-success lh-1 mg-t-20 d-inline-block"></i>
+					<h4 class="tx-success tx-semibold mg-b-20">Congratulations!</h4>
+					<p class="mg-b-20 mg-x-20">Your Website is now protected by ElroSec.</p><button aria-label="Close" class="btn ripple btn-success pd-x-25" data-dismiss="modal" type="button">Continue</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="fail_modal">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content tx-size-sm">
+				<div class="modal-body tx-center pd-y-20 pd-x-20">
+					<button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button> <i class="icon icon ion-ios-close-circle-outline tx-100 tx-danger lh-1 mg-t-20 d-inline-block"></i>
+					<h4 class="tx-danger mg-b-20">Error: Cannot process your entry!</h4>
+					<p class="mg-b-20 mg-x-20">Something went wrong, Please contact support</p><button aria-label="Close" class="btn ripple btn-danger pd-x-25" data-dismiss="modal" type="button">Continue</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Modal alert message -->
+
 
 	<!-- Footer opened -->
 	<div class="main-footer ht-40">
@@ -1140,29 +1325,98 @@
 	}
 </style>
 <script>
-	$(document).ready(function() {
-		let active_services_arr = <?php echo json_encode($services); ?>;
-		active_services_arr = (active_services_arr[0]);
-		console.log(active_services_arr);
-		$.each($('.chkbxs'), function (ind, chkbx) {
+	var websites_arr = <?php echo json_encode($services); ?>;
+	$(document).ready(function () {
+		console.log(websites_arr);
+		$.each(websites_arr,function(idx,web_data){
+			$('#webs-select').append('<option value="'+idx+'">'+ web_data["website"]+'</option>');
+		});
+
+		//always add an option to add an new website
+		$('#webs-select').append('<option value="-1">Add a new web site</option>');
+
+		//always start with the first website of the client
+		$('#webs-select').val(0).change();
+	});
+
+	$("#webs-select").on('change', function () {
+		var selected_val = $(this).val();
+		if (selected_val == -1) {
+			$('#add_web_modal').modal('show');
+		}else{
+			//update checkboxes of active services for the selected website
+			$.each($('.chkbxs'), function (ind, chkbx) {
+				let current_id = $(chkbx).attr('id');
+				let status = (websites_arr[selected_val][current_id] === '1') ? true : false;
+				$(chkbx).prop("checked", status)
+			});
+		}
+	});
+
+	$('#add-website').on('click',function(){
+		var url = $("#website-url-modal").val();
+		var active_services_arr = {};
+		$.each($('.modal_chkbxs'),function(ind,chkbx){
 			let current_id = $(chkbx).attr('id');
-			let status = (active_services_arr[current_id] === '1') ? true : false;
-			$(chkbx).prop("checked", status)
+			active_services_arr[current_id] = $(chkbx).prop("checked")? 1:0;
+		});
+
+		$.ajax({
+			type: "POST",
+			url: "<?php echo base_url(); ?>actions/addNewWebsite",
+			dataType: 'text',
+			async: false,
+			data: {url:url, services:active_services_arr},
+			success: function (result) {
+				$('#add_web_modal').modal('hide');
+				$('#website-url-modal').val('');
+				$('.modal_chkbxs').prop('checked',true);
+					if (result==1) {
+						$('#success_modal').modal('show');
+					} else {
+						$('#fail_modal').modal('show');
+					}
+			}
 		});
 	});
+
+	$('#add_web_modal').on('hidden.bs.modal', function () {
+		$('#webs-select').val(0).change();
+	});
+
+	$('#success_modal').on('hidden.bs.modal', function () {
+		location.reload();
+	});
+
+	//function refresh_websites_arr(){
+	//	$.ajax({
+	//		type: "POST",
+	//		url: "<?php //echo base_url(); ?>//actions/getActiveServices",
+	//		dataType: 'text',
+	//		async: false,
+	//		data: {},
+	//		success: function (result) {
+	//			if (result) {
+	//				websites_arr = result;
+	//			}
+	//		}
+	//	});
+	//}
 
 	$('.chkbxs').on('change', function (e) {
 		e.preventDefault();
 		var currently_checked = $(this).prop('checked');
 		if (confirm("are you sure you wish to change this?")) {
-			dataToUpdate = {};
+			var dataToUpdate = {};
 			dataToUpdate[$(this).attr('id')] = currently_checked ? 1 : 0;
+
+			var current_web = $('#webs-select option:selected').text();
 			$.ajax({
 				type: "POST",
 				url: "<?php echo base_url(); ?>actions/updateServiceStatus",
 				dataType: 'text',
 				async: false,
-				data: {email: '<?php echo $email; ?>', dataToUpdate: dataToUpdate},
+				data: {email: '<?php echo $email; ?>', dataToUpdate: dataToUpdate,website:current_web},
 				success: function (result) {
 					if (result) {
 						if (currently_checked) {

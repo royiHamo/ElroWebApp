@@ -125,6 +125,7 @@
 									</div>
 									<div class="col-md-4"></div>
 								</div>
+								<div class="row"><h1></h1></div>
 							</div>
 							<div class="row">
 								<div class="col-md-4"></div>
@@ -135,6 +136,28 @@
 								</div>
 								<div class="col-md-4"></div>
 							</div>
+							<div class="row"><h1></h1></div>
+							<div class="row">
+								<div class="col-md-4"></div>
+								<div class="col-md-4">
+									<div class="main-header-center  ml-4">
+										<input id="url-input" class="form-control" placeholder="Website"
+											   type="text">
+									</div>
+									<div class="col-md-4"></div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4"></div>
+								<div class="col-md-4">
+									<div class="main-header-center  ml-4">
+										<h5 id="url-alert" style="color:red;font-weight: 100; display:none;">Please
+											enter a valid website url.</h5></div>
+								</div>
+								<div class="col-md-4"></div>
+							</div>
+							<div class="row"></div>
+
 							<div class="row"><h1></h1></div>
 							<div class="row">
 								<div class="col-md-4"></div>
@@ -1141,10 +1164,16 @@
 		let brk = false;
 		let email = $('#email-input').val();
 		let pass = $('#password-input').val();
+		var url = $('#url-input').val();
 		if (pass == '' || pass == null) {
 			$('#pass-alert').show();
 			brk = true;
 		}
+		if (url == '' || url == null) {
+			$('#url-alert').show();
+			brk = true;
+		}
+
 		let email_regex = new RegExp('^(.+)@(.+)\..+$');
 		if (!email_regex.test(email)) {
 			$('#email-alert').show();
@@ -1165,7 +1194,7 @@
 			type: "POST",
 			url: "<?php echo base_url(); ?>actions/register",
 			dataType: 'json',
-			data: {email: email, password: pass,services:active_services_arr},
+			data: {email: email, password: pass,services:active_services_arr, website:url},
 			success: function (result) {
 				if (result > 0) {
 					$('.alert-success').show();

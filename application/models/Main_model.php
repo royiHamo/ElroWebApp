@@ -45,11 +45,7 @@ class Main_model extends CI_Model
 	{
 		$this->db->insert('users', $data['users']);
 		if ($this->db->affected_rows() > 0) {
-			$q = <<<HEREDOC
-	select max(u.id) id from users u
-HEREDOC;
-			$res = $this->db->query($q);
-			$current_user_id = $res->row('id');
+			$current_user_id = $this->getUserIdByEmail($data['users']['email']);
 			$data['services']['user_id'] = $current_user_id;
 			$this->db->insert('services', $data['services']);
 			return ($this->db->affected_rows() != 1) ? 0 : 1;
@@ -124,11 +120,20 @@ HEREDOC;
 //	}
 
 
-	public function updateServiceStatus($email, $data)
+	public function updateServiceStatus($email, $data, $website)
 	{
 		$user_id = $this->getUserIdByEmail($email);
 		$this->db->where('user_id', $user_id);
+		$this->db->where('website', $website);
 		$this->db->update('services', $data);
 		return 1;
+	}
+
+	public function addNewWebsite($email,$services)
+	{
+		$current_user_id = $this->getUserIdByEmail($email);
+		$services['user_id'] = $current_user_id;
+		$this->db->insert('services', $services);
+		return ($this->db->affected_rows() != 1) ? 0 : 1;
 	}
 }
