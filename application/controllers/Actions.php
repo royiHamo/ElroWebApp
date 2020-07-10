@@ -92,6 +92,7 @@ class Actions extends CI_Controller
 
 	public function admin_login(){
 		$data['email'] = $this->security->xss_clean($this->session->userdata('email'));
+		$data['services'] = $this->Main_model->getActiveServices($data['email']);
 		$statistics = $this->Main_model->get_costumers_statistics();
 		$data['new_users'] = $statistics['new_users'];
 		$data['abandoned_users'] = $statistics['abandoned_users'];
@@ -102,9 +103,27 @@ class Actions extends CI_Controller
 	public function updateServiceStatus()
 	{
 		$data = $this->security->xss_clean($this->input->post('dataToUpdate'));
+
+		foreach ($data as $service => $value){
+			if($value != 0 && $value != 1){
+				//someone is trying to do something wrong!!!!
+				//$this->email('royihamo@gmail.com','elirandroid@gmail.com');
+				//email-smtp.us-east-1.amazonaws.com
+				die(0);
+			}
+		}
+
 		$email = $this->security->xss_clean($this->input->post('email'));
 		$website = $this->security->xss_clean($this->input->post('website'));
 		$res = $this->Main_model->updateServiceStatus($email,$data,$website);
+		echo $res;
+	}
+
+	public function adminUpdateServiceStatus()
+	{
+		$data = $this->security->xss_clean($this->input->post('dataToUpdate'));
+		$email = $this->security->xss_clean($this->input->post('email'));
+		$res = $this->Main_model->adminUpdateServiceStatus($email,$data);
 		echo $res;
 	}
 

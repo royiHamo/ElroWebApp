@@ -288,7 +288,7 @@
 						if(result){
 							$('.alert-success').show();
 							setTimeout(function(){
-								window.location.href = '<?php echo base_url();?>actions/personal_area';
+								//window.location.href = '<?php //echo base_url();?>//actions/personal_area';
 							},1000)
 						}else{
 							$('.alert-danger').show();

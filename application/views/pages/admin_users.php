@@ -400,7 +400,7 @@
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
-							<table id="example" class="table key-buttons text-md-nowrap">
+							<table id="example" class="table display nowrap key-buttons text-md-nowrap">
 								<thead>
 								<tr>
 									<th class="border-bottom-0">Email</th>
@@ -1169,20 +1169,10 @@
 <script src="<?php echo base_url(); ?>/assets/js/custom.js"></script>
 <script src="<?php echo base_url(); ?>/assets/js/jquery.vmap.sampledata.js"></script>
 <script>
-	// $(document).ready(function(){
-		//let active_services_arr = <?php //echo json_encode($services); ?>//;
-		//active_services_arr = (active_services_arr[0]);
-		//
-		//$.each($('.chkbxs'),function(ind,chkbx){
-		//	$current_id = $(chkbx).attr('id');
-		//	$status = (active_services_arr[$current_id] === '1')? true : false;
-		//	$(chkbx).prop( "checked", $status )
-		//});
 
 		$(document).ready(function() {
 			var t = $('#example').DataTable();
 			var users = <?php echo json_encode($users);?>;
-			// $('#addRow').on( 'click', function () {
 			$.each(users, function(idx,user){
 				t.row.add( [
 					user['email'],
@@ -1199,13 +1189,7 @@
 				] ).draw( false );
 			});
 
-			//TODO: support export buttons
-			// } );
-			//
-			// // Automatically add a first row of data
-			// $('#addRow').click();
 		} );
-	// });
 
 </script>
 

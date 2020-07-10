@@ -1,7 +1,6 @@
 $(function(e) {
 	//file export datatable
 	var table = $('#example').DataTable({
-		lengthChange: false,
 		buttons: [ 'copy', 'excel', 'pdf', 'colvis' ],
 		responsive: true,
 		language: {
@@ -44,11 +43,11 @@ $(function(e) {
             table.$('tr.selected').removeClass('selected');
             $(this).addClass('selected');
         }
-    } );
+    });
  
     $('#button').click( function () {
         table.row('.selected').remove().draw( false );
-    } );
+    });
 	
 	//Details display datatable
 	$('#example-1').DataTable( {

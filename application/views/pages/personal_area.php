@@ -1347,8 +1347,13 @@
 			//update checkboxes of active services for the selected website
 			$.each($('.chkbxs'), function (ind, chkbx) {
 				let current_id = $(chkbx).attr('id');
-				let status = (websites_arr[selected_val][current_id] === '1') ? true : false;
-				$(chkbx).prop("checked", status)
+				let disable = (websites_arr[selected_val][current_id] === '-1') ? true : false;
+				if(disable){
+					$(chkbx).prop("disabled", disable);
+				}else{
+					let status = (websites_arr[selected_val][current_id] === '1') ? true : false;
+					$(chkbx).prop("checked", status);
+				}
 			});
 		}
 	});

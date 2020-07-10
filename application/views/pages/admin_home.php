@@ -1592,14 +1592,50 @@
 <script src="<?php echo base_url(); ?>/assets/js/jquery.vmap.sampledata.js"></script>
 <script>
 	$(document).ready(function(){
-		//let active_services_arr = <?php //echo json_encode($services); ?>//;
-		//active_services_arr = (active_services_arr[0]);
-		//
-		//$.each($('.chkbxs'),function(ind,chkbx){
-		//	$current_id = $(chkbx).attr('id');
-		//	$status = (active_services_arr[$current_id] === '1')? true : false;
-		//	$(chkbx).prop( "checked", $status )
-		//});
+		var activeServicesArr = <?php echo json_encode($services); ?>;
+		activeServicesArr = (activeServicesArr[0]);
+		console.log(activeServicesArr);
+		$.each($('.chkbxs'),function(ind,chkbx){
+			$current_id = $(chkbx).attr('id');
+			$status = (activeServicesArr[$current_id] === '-1')? false : true;
+			$(chkbx).prop( "checked", $status )
+		});
+
+
+		$('.chkbxs').on('change', function (e) {
+			e.preventDefault();
+			var updateToTrue = $(this).prop('checked');
+			if (confirm("are you sure you wish to change this?")) {
+				var dataToUpdate = {};
+				var currentService = $(this).attr('id');
+				dataToUpdate[currentService] = updateToTrue ? 0 : -1;
+
+				$.ajax({
+					type: "POST",
+					url: "<?php echo base_url(); ?>actions/adminUpdateServiceStatus",
+					dataType: 'text',
+					async: false,
+					data: {email: '<?php echo $email; ?>', dataToUpdate: dataToUpdate},
+					success: function (result) {
+						if (result) {
+							if (updateToTrue) {
+								$(this).prop('checked', false);
+								//update global array as well
+								activeServicesArr[currentService] =  0;
+							} else {
+								$(this).prop('checked', true);
+								//update global array as well
+								activeServicesArr[currentService] = 1;
+							}
+						}
+					}
+				});
+			} else {
+				$(this).prop('checked', !updateToTrue);
+			}
+		});
+
+
 		/* Apexcharts (#bar) */
 		var optionsBar = {
 			chart: {
