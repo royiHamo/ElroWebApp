@@ -248,7 +248,16 @@
 		</style>
 		<script>
 			$(document).ready(function(){
-
+				$('#email-input').on('keypress',function(e) {
+					if(e.which == 13) {
+						$('#password-input').focus();
+					}
+				});
+				$('#password-input').on('keypress',function(e) {
+					if(e.which == 13) {
+						$('#login-btn').click();
+					}
+				});
 			});
 
 			$('#login-btn').on('click',function(){
@@ -288,7 +297,7 @@
 						if(result){
 							$('.alert-success').show();
 							setTimeout(function(){
-								//window.location.href = '<?php //echo base_url();?>//actions/personal_area';
+								window.location.href = '<?php echo base_url();?>actions/personal_area';
 							},1000)
 						}else{
 							$('.alert-danger').show();

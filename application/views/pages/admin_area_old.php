@@ -75,7 +75,7 @@
 			</div>
 			<!-- search -->
 			<div class="main-header-right">
-				<a href="<?php echo base_url(); ?>actions/logout" id="logout_btn">Logout</a>&nbsp;&nbsp;
+				<a href="<?php echo base_url(); ?>actions/logout" id="logout_btn">Log out</a>&nbsp;&nbsp;
 			</div>
 		</div>
 	</div>

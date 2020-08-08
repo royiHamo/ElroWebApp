@@ -19,10 +19,11 @@ $(function(e) {
 	$('#swal-success').click(function () {
 		swal(
 			{
-				title: 'Well done!',
-				text: 'You clicked the button!',
+				title: 'Thank you!',
+				text: 'We have received your request, please stand by while we process your request',
 				type: 'success',
-				confirmButtonColor: '#57a94f'
+				confirmButtonColor: '#57a94f',
+				onClose: DeleteUnsavedImages()
 			}
 		)
 	});

@@ -76,7 +76,7 @@
 			</div>
 			<!-- search -->
 			<div class="main-header-right">
-				<a href="<?php echo base_url(); ?>actions/logout" id="logout_btn">Logout</a>&nbsp;&nbsp;
+				<a href="<?php echo base_url(); ?>actions/logout" id="logout_btn">Log out</a>&nbsp;&nbsp;
 			</div>
 		</div>
 	</div>
@@ -96,6 +96,7 @@
 							back <?php echo ucfirst(strtok($email, '@')); ?>!</h2>
 						<p class="mg-b-0">Attacks monitoring panel</p>
 					</div>
+
 				</div>
 				<div class="main-dashboard-header-right">
 					<div>
@@ -119,7 +120,7 @@
 			<!-- /breadcrumb -->
 			<!-- row -->
 			<div class="row row-sm">
-				<h4>Showing settings for:</h4>
+				<h4>Showing settings for<h4 id="ip_address"></h4>:</h4>
 
 				<select id="webs-select" class="form-control">
 				</select></br></br></br></br>
@@ -158,7 +159,7 @@
 							<div class="pb-0 mt-0">
 								<div class="d-flex">
 									<div class="">
-										<h4 class="tx-20 font-weight-bold mb-1 text-white">1,230</h4>
+										<h4 class="tx-20 counter font-weight-bold mb-1 text-white">1230</h4>
 										<p class="mb-0 tx-12 text-white op-7">Blocked attempts</p>
 									</div>
 									<span class="float-right my-auto ml-auto">
@@ -1105,7 +1106,7 @@
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content modal-content-demo">
 				<div class="modal-header">
-					<h6 class="modal-title">Add a new Web-site</h6>
+					<h6 class="modal-title">Add a new Website</h6>
 					<button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
 								aria-hidden="true">&times;</span></button>
 				</div>
@@ -1113,6 +1114,7 @@
 					<h6>Website Details</h6>
 					<p>here you can define the settings for the new website you wish to protect</p></br>
 					<input type="text" class="form-control" id="website-url-modal" placeholder="URL"></br>
+					<input type="text" class="form-control" id="website-ip-modal" placeholder="IP"></br>
 					<div>
 						<div class="row">
 							<div class="col-md-12">
@@ -1295,6 +1297,10 @@
 <!-- JQuery min js -->
 <script src="<?php echo base_url(); ?>/assets/plugins/jquery/jquery.min.js"></script>
 
+<!--Internal Counters -->
+<script src="<?php echo base_url(); ?>/assets/plugins/counters/waypoints.min.js"></script>
+<script src="<?php echo base_url(); ?>/assets/plugins/counters/counterup.min.js"></script>
+
 <!-- Bootstrap Bundle js -->
 <script src="<?php echo base_url(); ?>/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -1317,6 +1323,7 @@
 <!-- Horizontalmenu js-->
 <script src="<?php echo base_url(); ?>/assets/plugins/horizontal-menu/horizontal-menu-2/horizontal-menu.js"></script>
 
+
 <!-- custom js -->
 <script src="<?php echo base_url(); ?>/assets/js/custom.js"></script>
 <style>
@@ -1325,11 +1332,21 @@
 	}
 </style>
 <script>
-	var websites_arr = <?php echo json_encode($services); ?>;
+	var websites_arr = <?php echo ($services); ?>;
+	console.log(websites_arr);
+	// var websites_arr = [];
 	$(document).ready(function () {
-		console.log(websites_arr);
+		//
+		// //parse elements to js object from json string
+		// $.each(arr_from_db,function(idx,obj){
+		// 	websites_arr.push(JSON.parse(obj))
+		// });
+		// console.log(websites_arr);
+		// console.log("-------");
+
+
 		$.each(websites_arr,function(idx,web_data){
-			$('#webs-select').append('<option value="'+idx+'">'+ web_data["website"]+'</option>');
+			$('#webs-select').append('<option value="'+idx+'" data-ip="'+web_data['server_ip']+'">'+ web_data["website"] + '</option>');
 		});
 
 		//always add an option to add an new website
@@ -1341,17 +1358,23 @@
 
 	$("#webs-select").on('change', function () {
 		var selected_val = $(this).val();
+		var server_ip = $('#webs-select option:selected').attr('data-ip');
+		$('#ip_address').html("-" + server_ip)
+
 		if (selected_val == -1) {
 			$('#add_web_modal').modal('show');
 		}else{
 			//update checkboxes of active services for the selected website
 			$.each($('.chkbxs'), function (ind, chkbx) {
 				let current_id = $(chkbx).attr('id');
+				console.log(current_id);
+				//set counters
+				// $(chkbx).parent().parent().find('h4').html(1)//TODO: implement real logic
 				let disable = (websites_arr[selected_val][current_id] === '-1') ? true : false;
 				if(disable){
 					$(chkbx).prop("disabled", disable);
 				}else{
-					let status = (websites_arr[selected_val][current_id] === '1') ? true : false;
+					let status = websites_arr[selected_val][current_id] === "True" ? 1 : 0;
 					$(chkbx).prop("checked", status);
 				}
 			});
@@ -1359,7 +1382,8 @@
 	});
 
 	$('#add-website').on('click',function(){
-		var url = $("#website-url-modal").val();
+		var url = $("#website-url-modal").val().substr(0,indexof);
+		var ip = $("#website-ip-modal").val();
 		var active_services_arr = {};
 		$.each($('.modal_chkbxs'),function(ind,chkbx){
 			let current_id = $(chkbx).attr('id');
@@ -1371,7 +1395,7 @@
 			url: "<?php echo base_url(); ?>actions/addNewWebsite",
 			dataType: 'text',
 			async: false,
-			data: {url:url, services:active_services_arr},
+			data: {url:url, ip:ip, services:active_services_arr},
 			success: function (result) {
 				$('#add_web_modal').modal('hide');
 				$('#website-url-modal').val('');
@@ -1401,7 +1425,7 @@
 	//		async: false,
 	//		data: {},
 	//		success: function (result) {
-	//			if (result) {
+	//			if (result) {dd a new Web-site
 	//				websites_arr = result;
 	//			}
 	//		}
@@ -1414,7 +1438,7 @@
 		if (confirm("are you sure you wish to change this?")) {
 			var dataToUpdate = {};
 			var current_service = $(this).attr('id');
-			dataToUpdate[current_service] = currently_checked ? 1 : 0;
+			dataToUpdate[current_service] = currently_checked ? "True" : "False";
 
 			var current_web = $('#webs-select option:selected').text();
 			var current_val = $('#webs-select option:selected').val();

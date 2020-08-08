@@ -32,6 +32,9 @@
 		<!--  Right-sidemenu css -->
 		<link href="<?php echo base_url(); ?>/assets/plugins/sidebar/sidebar.css" rel="stylesheet">
 
+		<!--- Internal Sweet-Alert css-->
+		<link href="<?php echo base_url(); ?>/assets/plugins/sweet-alert/sweetalert.css" rel="stylesheet">
+
 		<!--  Custom Scroll bar-->
 		<link href="<?php echo base_url(); ?>/assets/plugins/mscrollbar/jquery.mCustomScrollbar.css" rel="stylesheet"/>
 
@@ -556,12 +559,12 @@
 
 					<div class="row">
 						<div class="col-md-12"></div>
-								<h1 style="font-size:100px;">Welcome To ElroSec.</h1>
+								<h1 style="font-size:100px;">Welcome To ElroSecurity</h1>
 					</div>
 
 					<div class="row">
 						<div class="col-md-9"></div>
-							<p style="font-size:20px;"> we offer advanced security services</p>
+							<p style="font-size:20px;margin-left:40px"> we offer advanced security services</p>
 						<div class="col-md-3"></div>
 					</div>
 					<div class="row"></div>
@@ -570,19 +573,51 @@
 					<div class="row">
 						<div class="col-md-9">
 						<div class="main-header-center  ml-4">
-						<input id="url_input" class="form-control" placeholder="Type in the URL you wish to safely visit..." type="search"><button style="color:white" id="search_btn" class="btn search_btn"><i class="fe fe-search"></i></button>
-						</div>
+							<input id="url_input" class="form-control" placeholder="Type in the URL you wish to get SSLLabs report for..." type="search"><button style="color:white" id="search_btn" class="btn search_btn"><i class="fe fe-search"></i></button>
 
 						</div>
-						<div class="col-md-3"></div>
 						</div>
+						<div class="col-md-3"></div>
+					</div>
 					<!-- row closed -->
+					<div class="row">
+						<div class="col-md-4">
+							<div class="main-header-center  ml-4">
+								<br><h5 id="url_error_alert" style="color:red;font-weight: 100;margin-top:10px; font-size: 14px;display:none;">Please enter a valid url.</h5></div>
+						</div>
+						<div class="col-md-4"></div>
+						<div class="col-md-4"></div>
+					</div>
 					<div class="row">
 						<div>
 						</div>
 					</div>
 				</div>
 				<!-- Container closed -->
+				<!-- Scroll modal -->
+				<div class="modal" id="report_modal">
+					<div class="modal-dialog" role="document" style="overflow: initial !important">
+						<div class="modal-content modal-content-demo">
+							<div class="modal-header">
+								<h6 class="modal-title">SSL Labs Security Report</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+							</div>
+							<div class="modal-body" style="overflow-y: auto !important;height: 600px !important;">
+								<label>Host Name:</label><h2 id="host_name"></h2><br>
+								<label>Port:</label><h2 id="port"></h2><br>
+								<label>Protocol:</label><h2 id="protocol"></h2><br>
+								<label>Overall Grade:</label><h2 id="grade"></h2><br>
+								<hr><br>
+								<h1>Security Alerts:</h1><br><br>
+								<div id="alerts_div"><ul style="color: red"></ul></div>
+								<hr><br>
+								<h1>Endpoints:</h1><br><br>
+								<div id="endpoints_div"></div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!--End Scroll modal -->
 			</div>
 			<!-- main-content closed -->
 
@@ -1225,6 +1260,8 @@
 				</div><!-- modal-dialog -->
 			</div><!-- modal -->
 
+
+
 			<!-- Footer opened -->
 			<div class="main-footer ht-40">
 				<div class="container-fluid pd-t-0-f ht-100p">
@@ -1232,7 +1269,9 @@
 				</div>
 			</div>
 			<!-- Footer closed -->
-
+			<div hidden class="btn ripple btn-success-gradient" id="alert-success">
+				Click me !
+			</div>
 		</div>
 		<!-- End Page -->
 
@@ -1258,6 +1297,14 @@
 		<script src="<?php echo base_url(); ?>/assets/plugins/rating/jquery.rating-stars.js"></script>
 		<script src="<?php echo base_url(); ?>/assets/plugins/rating/jquery.barrating.js"></script>
 
+		<!--Internal  Sweet-Alert js-->
+		<script src="<?php echo base_url(); ?>/assets/plugins/sweet-alert/sweetalert.min.js"></script>
+		<script src="<?php echo base_url(); ?>/assets/plugins/sweet-alert/jquery.sweet-alert.js"></script>
+
+		<!-- Sweet-alert js  -->
+		<script src="<?php echo base_url(); ?>/assets/plugins/sweet-alert/sweetalert.min.js"></script>
+		<script src="<?php echo base_url(); ?>/assets/js/sweet-alert.js"></script>
+
 		<!-- Custom Scroll bar Js-->
 		<script src="<?php echo base_url(); ?>/assets/plugins/mscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 
@@ -1268,24 +1315,74 @@
 		<script src="<?php echo base_url(); ?>/assets/js/custom.js"></script>
 		<script>
 			$(document).ready(function(){
+				$('#url_input').on('keypress',function(e) {
+					if(e.which == 13) {
+						$('#search_btn').click();
+					}
+				});
+
+
+				$('.close').on('click',function(){
+					$('#report_modal').hide();
+				});
+
 				$('#search_btn').on('click',function(){
-					var url = $('#url_input').val();
-					$.ajax({
-						type: "POST",
-						url:"<?php echo base_url(); ?>actions/web_report",
-						dataType: 'text',
-						data: { url:  url },
-						success: function(result){
-							if(result){
-								$('.alert-success').show();
-								setTimeout(function(){
-									//window.location.href = '<?php //echo base_url();?>//actions/personal_area';
-								},1000)
-							}else{
-								$('.alert-danger').show();
+					$('url_error_alert').hide();
+					var inserted_url = $('#url_input').val();
+					let url_regex = new RegExp('((?:https?://|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}/)(?:[^\\s()<>]+|\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\))+(?:\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:\'\".,<>?«»“”‘’]))');
+					if (!url_regex.test(inserted_url)) {
+						$('#url_error_alert').show();
+						$('#url_input').val('');
+						return;
+					}
+					swal(
+							{
+								title: 'Thank you!',
+								text: 'We have received your request, please stand by while we process your request',
+								type: 'success',
+								confirmButtonColor: '#57a94f'
+							},
+							function(){
+								$('#global-loader').show()
+								var url = $('#url_input').val();
+								$.ajax({
+									type: "POST",
+									url:"<?php echo base_url(); ?>actions/webReport",
+									dataType: 'json',
+									data: { url:  url },
+									success: function(result){
+										$('#global-loader').hide();
+										console.log(result);
+										if (result.ssl_report.status === "READY") {
+											var endpoints_html ="";
+											var worst_grade = 'A';
+											var alerts_html ="";
+											$('#host_name').text(result.ssl_report.host);
+											$('#port').text(result.ssl_report.port);
+											$('#protocol').text(result.ssl_report.protocol);
+											$.each(result.user_protection.alerts,function(idx,alert){
+												alerts_html += "<div><li>"+alert+"</li><br>"
+											});
+
+											$.each(result.ssl_report.endpoints,function(idx,endpoint_item){
+												let cur_grade = endpoint_item.grade;
+												let cur_serv_name = endpoint_item.serverName ? endpoint_item.serverName : '-';
+												if(cur_grade.charCodeAt(0) > worst_grade.charCodeAt(0)){
+													worst_grade = cur_grade;
+												}
+												endpoints_html += "<div><h3>Endpoint #"+idx+" </h3>"+"<br><label>Server Name:</label><h4>"+cur_serv_name+"</h4><br><label>IP Address:</label><h4>"+endpoint_item.ipAddress+"</h4><br><label>Grade</label><h4>"+cur_grade+"</h4><br></div>"
+											});
+											$('#grade').html(worst_grade);
+											$('#endpoints_div').html(endpoints_html);
+											$('#alerts_div ul').html(alerts_html);
+											$('#report_modal').show();
+										} else {
+											swal("Cancelled", "Something went wrong, please try again :)", "error");
+										}
+									}
+								});
 							}
-						}
-					});
+					)
 				});
 			});
 		</script>

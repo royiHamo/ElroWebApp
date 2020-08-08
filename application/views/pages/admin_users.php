@@ -93,7 +93,7 @@
 					<a class="side-menu__item" href="<?php echo base_url(); ?>actions/admin_login"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24" ><path d="M0 0h24v24H0V0z" fill="none"/><path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3"/><path d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z"/></svg><span class="side-menu__label">Dashboard</span></a>
 				</li>
 				<li class="slide">
-					<a class="side-menu__item" href="<?php echo base_url(); ?>actions/users"><i class="side-menu__icon mdi mdi-account-multiple"></i><span class="side-menu__label">Users</span><span class="badge badge-success side-badge">456</span></a><!-- TODO: add users count from table -->
+					<a class="side-menu__item" href="<?php echo base_url(); ?>actions/users"><i class="side-menu__icon mdi mdi-account-multiple"></i><span class="side-menu__label">Users</span><span id="users_count" class="badge badge-success side-badge ">456</span></a>
 				</li>
 				<li class="slide">
 					<a class="side-menu__item" href="<?php echo base_url(); ?>actions/attacks"><i class="side-menu__icon mdi mdi-access-point"></i><span class="side-menu__label">Attacks log</span></a>
@@ -364,12 +364,7 @@
 										</div>
 									</div>
 								</div>
-								<a class="dropdown-item" href=""><i class="bx bx-user-circle"></i>Profile</a>
-								<a class="dropdown-item" href=""><i class="bx bx-cog"></i> Edit Profile</a>
-								<a class="dropdown-item" href=""><i class="bx bxs-inbox"></i>Inbox</a>
-								<a class="dropdown-item" href=""><i class="bx bx-envelope"></i>Messages</a>
-								<a class="dropdown-item" href=""><i class="bx bx-slider-alt"></i> Account Settings</a>
-								<a class="dropdown-item" href="page-signin.html"><i class="bx bx-log-out"></i> Sign Out</a>
+								<a class="dropdown-item" href="<?php echo base_url(); ?>actions/logout"><i class="bx bx-log-out"></i> Log Out</a>
 							</div>
 						</div>
 						<div class="dropdown main-header-message right-toggle">
@@ -1172,12 +1167,13 @@
 
 		$(document).ready(function() {
 			var t = $('#example').DataTable();
-			var users = <?php echo json_encode($users);?>;
+			var users = <?php echo ($users);?>;
+			console.log(users);
 			$.each(users, function(idx,user){
 				t.row.add( [
 					user['email'],
 					user['active'],
-					user['website'],
+					user['server_dns'],
 					user['registered_on'],
 					user['sql_detector'],
 					user['xss_detector'],
@@ -1189,7 +1185,9 @@
 				] ).draw( false );
 			});
 
+		$("#users_count").html(Object.keys(users).length)
 		} );
+
 
 </script>
 

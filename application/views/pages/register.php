@@ -157,6 +157,27 @@
 								<div class="col-md-4"></div>
 							</div>
 							<div class="row"></div>
+							<div class="row"><h1></h1></div>
+							<div class="row">
+								<div class="col-md-4"></div>
+								<div class="col-md-4">
+									<div class="main-header-center  ml-4">
+										<input id="ip-input" class="form-control" placeholder="server ip address"
+											   type="text">
+									</div>
+									<div class="col-md-4"></div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4"></div>
+								<div class="col-md-4">
+									<div class="main-header-center  ml-4">
+										<h5 id="ip-alert" style="color:red;font-weight: 100; display:none;">Please
+											enter a valid server ip url.</h5></div>
+								</div>
+								<div class="col-md-4"></div>
+							</div>
+							<div class="row"></div>
 
 							<div class="row"><h1></h1></div>
 							<div class="row">
@@ -1165,12 +1186,20 @@
 		let email = $('#email-input').val();
 		let pass = $('#password-input').val();
 		var url = $('#url-input').val();
+		var ip = $('#ip-input').val();
+
 		if (pass == '' || pass == null) {
 			$('#pass-alert').show();
 			brk = true;
 		}
+
 		if (url == '' || url == null) {
 			$('#url-alert').show();
+			brk = true;
+		}
+
+		if (ip == '' || ip == null) {
+			$('#ip-alert').show();
 			brk = true;
 		}
 
@@ -1194,7 +1223,7 @@
 			type: "POST",
 			url: "<?php echo base_url(); ?>actions/register",
 			dataType: 'json',
-			data: {email: email, password: pass,services:active_services_arr, website:url},
+			data: {email: email, password: pass,services:active_services_arr, website:url,ip:ip},
 			success: function (result) {
 				if (result > 0) {
 					$('.alert-success').show();
