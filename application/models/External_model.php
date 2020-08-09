@@ -84,24 +84,21 @@ class External_model extends CI_Model
 //		return $res->row_array();
 //	}
 
+	//DONE this is doneeeee
 	public function updateServiceStatus($email, $update_data, $website)
 	{
-//		$user_id = $this->getUserIdByEmail($email);
-//		$this->db->where('user_id', $user_id);
-//		$this->db->where('website', $website);
-//		$this->db->update('services', $update_data);
-//		return 1;
-//		$data = "{\"email\":\"$email\",\"update_data\":\"$update_data\",\"website\":\"$website\"}";
 		$data = array("email"=>$email, "update_data"=>$update_data,"website"=>$website);
 		return $this->sendDataToElroWaf(json_encode($data),"updateServiceStatus");
 	}
 
+	//DONE this is doneeeee
 	public function adminUpdateServiceStatus($email, $update_data)
 	{
 //		$this->db->update('services', $update_data);
 //		return 1;
-		$data = "{\"email\":\"$email\",\"update_data\":\"$update_data\"}";
-		return $this->sendDataToElroWaf($data,"adminUpdateServiceStatus");
+		$data = array("email"=>$email, "update_data"=>$update_data);
+
+		return $this->sendDataToElroWaf(json_encode($data),"adminUpdateServiceStatus");
 	}
 
 	//DONE this is doneeeee

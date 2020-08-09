@@ -1592,9 +1592,11 @@
 <script src="<?php echo base_url(); ?>/assets/js/jquery.vmap.sampledata.js"></script>
 <script>
 	$(document).ready(function(){
-		var activeServicesArr = <?php echo json_encode($services); ?>;
+		var activeServicesArr = <?php echo ($services); ?>;
 		activeServicesArr = (activeServicesArr[0]);
+		console.log("**********************");
 		console.log(activeServicesArr);
+
 		$.each($('.chkbxs'),function(ind,chkbx){
 			$current_id = $(chkbx).attr('id');
 			$status = (activeServicesArr[$current_id] === '-1')? false : true;
