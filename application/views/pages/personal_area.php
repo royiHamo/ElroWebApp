@@ -1374,7 +1374,7 @@
 				if(disable){
 					$(chkbx).prop("disabled", disable);
 				}else{
-					let status = websites_arr[selected_val][current_id] === "True" ? 1 : 0;
+					let status = websites_arr[selected_val][current_id] === "1" ? 1 : 0;
 					$(chkbx).prop("checked", status);
 				}
 			});

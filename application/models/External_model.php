@@ -174,7 +174,7 @@ class External_model extends CI_Model
 			$counter++;
 
 
-		} while (!isset($status) || ($status != 'READY' && $status != 'ERROR' && $counter < 3));
+		} while (!isset($status) || ($status != 'READY' && $status != 'ERROR' && $counter < 10));
 
 		if (!curl_errno($tuCurl)) {
 			$info = curl_getinfo($tuCurl);

@@ -583,7 +583,7 @@
 					<div class="row">
 						<div class="col-md-4">
 							<div class="main-header-center  ml-4">
-								<br><h5 id="url_error_alert" style="color:red;font-weight: 100;margin-top:10px; font-size: 14px;display:none;">Please enter a valid url.</h5></div>
+								<br><h5 id="url_error_alert" style="color:red;font-weight: 100;margin-top:10px; font-size: 14px;display:none;">Please enter a valid url - (https://www.example.com).</h5></div>
 						</div>
 						<div class="col-md-4"></div>
 						<div class="col-md-4"></div>
@@ -1321,7 +1321,6 @@
 					}
 				});
 
-
 				$('.close').on('click',function(){
 					$('#report_modal').hide();
 				});
@@ -1345,6 +1344,9 @@
 							function(){
 								$('#global-loader').show()
 								var url = $('#url_input').val();
+								url = url.replace('https://','');
+								url = url.replace('http://','');
+								url = "https://"+url;
 								$.ajax({
 									type: "POST",
 									url:"<?php echo base_url(); ?>actions/webReport",
@@ -1360,9 +1362,13 @@
 											$('#host_name').text(result.ssl_report.host);
 											$('#port').text(result.ssl_report.port);
 											$('#protocol').text(result.ssl_report.protocol);
-											$.each(result.user_protection.alerts,function(idx,alert){
-												alerts_html += "<div><li>"+alert+"</li><br>"
-											});
+											if(result.user_protection !== null && result.user_protection.hasOwnProperty('alerts')){
+												$.each(result.user_protection.alerts,function(idx,alert){
+													alerts_html += "<div><li>"+alert+"</li><br>"
+												});
+											}else{
+												alerts_html = "<div><li>No alerts found.</li><br>"
+											}
 
 											$.each(result.ssl_report.endpoints,function(idx,endpoint_item){
 												let cur_grade = endpoint_item.grade;
@@ -1384,6 +1390,17 @@
 							}
 					)
 				});
+
+				//search url if arrived in as a path param
+				var urlParams = new URLSearchParams(window.location.search);
+				var myParam = urlParams.get('getRank');
+				if((myParam) !== null){
+					myParam = myParam.split("\"").join("")
+					myParam = myParam.split("\'").join("")
+					$('#url_input').val(myParam);
+					$('#search_btn').trigger('click')
+				}
+
 			});
 		</script>
 	</body>
