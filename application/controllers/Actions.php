@@ -7,7 +7,7 @@ class Actions extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Main_model');
+//		$this->load->model('Main_model');
 		$this->load->model('External_model');
 		$this->load->library('encryption');
 		$this->load->helper("security");
@@ -100,12 +100,12 @@ class Actions extends CI_Controller
 		}
 		$data['email'] = $this->security->xss_clean($this->session->userdata('email'));
 		$data['services'] = $this->External_model->getActiveServices($data['email']);//done!!!!
-		$statistics = $this->Main_model->getCustomersStatistics();
-		$data['new_users'] = $statistics['new_users'];
+//		$statistics = $this->Main_model->getCustomersStatistics();
+//		$data['new_users'] = $statistics['new_users'];
 		$users_list = json_decode($this->External_model->getUsersData());
 		$data['users_count'] = sizeof( $users_list);
-		$data['abandoned_users'] = $statistics['abandoned_users'];
-		$data['paying_users'] = $statistics['paying_users'];
+//		$data['abandoned_users'] = $statistics['abandoned_users'];
+//		$data['paying_users'] = $statistics['paying_users'];
 		$this->load->view('pages/admin_home', $data);
 	}
 
