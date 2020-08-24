@@ -99,7 +99,7 @@ class Actions extends CI_Controller
 			$this->load->view('pages/home');
 		}
 		$data['email'] = $this->security->xss_clean($this->session->userdata('email'));
-		$data['services'] = $this->External_model->getActiveServices($data['email']);//done!!!!
+		$data['services'] = $this->External_model->getActiveServices($data['email'],true);
 //		$statistics = $this->Main_model->getCustomersStatistics();
 //		$data['new_users'] = $statistics['new_users'];
 		$users_list = json_decode($this->External_model->getUsersData());

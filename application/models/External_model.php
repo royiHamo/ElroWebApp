@@ -22,9 +22,9 @@ class External_model extends CI_Model
 		return $this->sendDataToElroWaf(json_encode($data),"register");
 	}
 
-	public function getActiveServices($email)
+	public function getActiveServices($email,$is_admin=false)
 	{
-		$data = array("email"=> $email);
+		$data = array("email"=> $email, "is_admin"=>$is_admin);
 		return $this->sendDataToElroWaf(json_encode($data),"getActiveServices");
 	}
 
