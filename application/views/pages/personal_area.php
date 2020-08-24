@@ -296,11 +296,12 @@
 							<div class="pb-0 mt-0">
 								<div class="d-flex">
 									<div class="">
-										<h4 class="tx-20 font-weight-bold mb-1 text-white">4,820</h4>
+										<h4 class="tx-20 font-weight-bold mb-1 text-white">0</h4>
 										<p class="mb-0 tx-12 text-white op-7">Blocked attempts</p>
 									</div>
 									<span class="float-right my-auto ml-auto">
-												<input id="ddos_box" class="form-control chkbxs" type="checkbox"/>
+												<input id="ddos_box" class="form-control chkbxs" type="checkbox"
+													   disabled/>
 												<span class="text-white op-7"> active</span>
 											</span>
 								</div>
@@ -1259,9 +1260,14 @@
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content tx-size-sm">
 				<div class="modal-body tx-center pd-y-20 pd-x-20">
-					<button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button> <i class="icon ion-ios-checkmark-circle-outline tx-100 tx-success lh-1 mg-t-20 d-inline-block"></i>
+					<button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+								aria-hidden="true">&times;</span></button>
+					<i class="icon ion-ios-checkmark-circle-outline tx-100 tx-success lh-1 mg-t-20 d-inline-block"></i>
 					<h4 class="tx-success tx-semibold mg-b-20">Congratulations!</h4>
-					<p class="mg-b-20 mg-x-20">Your Website is now protected by ElroSec.</p><button aria-label="Close" class="btn ripple btn-success pd-x-25" data-dismiss="modal" type="button">Continue</button>
+					<p class="mg-b-20 mg-x-20">Your Website is now protected by ElroSec.</p>
+					<button aria-label="Close" class="btn ripple btn-success pd-x-25" data-dismiss="modal"
+							type="button">Continue
+					</button>
 				</div>
 			</div>
 		</div>
@@ -1270,9 +1276,14 @@
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content tx-size-sm">
 				<div class="modal-body tx-center pd-y-20 pd-x-20">
-					<button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button> <i class="icon icon ion-ios-close-circle-outline tx-100 tx-danger lh-1 mg-t-20 d-inline-block"></i>
+					<button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+								aria-hidden="true">&times;</span></button>
+					<i class="icon icon ion-ios-close-circle-outline tx-100 tx-danger lh-1 mg-t-20 d-inline-block"></i>
 					<h4 class="tx-danger mg-b-20">Error: Cannot process your entry!</h4>
-					<p class="mg-b-20 mg-x-20">Something went wrong, Please contact support</p><button aria-label="Close" class="btn ripple btn-danger pd-x-25" data-dismiss="modal" type="button">Continue</button>
+					<p class="mg-b-20 mg-x-20">Something went wrong, Please contact support</p>
+					<button aria-label="Close" class="btn ripple btn-danger pd-x-25" data-dismiss="modal" type="button">
+						Continue
+					</button>
 				</div>
 			</div>
 		</div>
@@ -1332,7 +1343,7 @@
 	}
 </style>
 <script>
-	var websites_arr = <?php echo ($services); ?>;
+	var websites_arr = <?php echo($services); ?>;
 	console.log(websites_arr);
 	// var websites_arr = [];
 	$(document).ready(function () {
@@ -1345,8 +1356,8 @@
 		// console.log("-------");
 
 
-		$.each(websites_arr,function(idx,web_data){
-			$('#webs-select').append('<option value="'+idx+'" data-ip="'+web_data['server_ip']+'">'+ web_data["website"] + '</option>');
+		$.each(websites_arr, function (idx, web_data) {
+			$('#webs-select').append('<option value="' + idx + '" data-ip="' + web_data['server_ip'] + '">' + web_data["website"] + '</option>');
 		});
 
 		//always add an option to add an new website
@@ -1363,31 +1374,36 @@
 
 		if (selected_val == -1) {
 			$('#add_web_modal').modal('show');
-		}else{
+		} else {
 			//update checkboxes of active services for the selected website
 			$.each($('.chkbxs'), function (ind, chkbx) {
-				let current_id = $(chkbx).attr('id');
-				console.log(current_id);
+				let current_detector = $(chkbx).attr('id');
+				console.log(current_detector);
+				if (current_detector == "ddos_box") {
+					return false;
+				}
 				//set counters
-				// $(chkbx).parent().parent().find('h4').html(1)//TODO: implement real logic
-				let disable = (websites_arr[selected_val][current_id] === '-1') ? true : false;
-				if(disable){
+				$(chkbx).parent().parent().find('h4').html(websites_arr[selected_val][current_detector]["count"])//TODO: implement real logic
+
+				//set disable or checked
+				let disable = (websites_arr[selected_val][current_detector]["state"] === '-1') ? true : false;
+				if (disable) {
 					$(chkbx).prop("disabled", disable);
-				}else{
-					let status = websites_arr[selected_val][current_id] === "1" ? 1 : 0;
+				} else {
+					let status = websites_arr[selected_val][current_detector]["state"] === "True" ? 1 : 0;
 					$(chkbx).prop("checked", status);
 				}
 			});
 		}
 	});
 
-	$('#add-website').on('click',function(){
-		var url = $("#website-url-modal").val().substr(0,indexof);
+	$('#add-website').on('click', function () {
+		var url = $("#website-url-modal").val();
 		var ip = $("#website-ip-modal").val();
 		var active_services_arr = {};
-		$.each($('.modal_chkbxs'),function(ind,chkbx){
-			let current_id = $(chkbx).attr('id');
-			active_services_arr[current_id] = $(chkbx).prop("checked")? 1:0;
+		$.each($('.modal_chkbxs'), function (ind, chkbx) {
+			let current_detector = $(chkbx).attr('id');
+			active_services_arr[current_detector] = $(chkbx).prop("checked") ? 1 : 0;
 		});
 
 		$.ajax({
@@ -1395,16 +1411,16 @@
 			url: "<?php echo base_url(); ?>actions/addNewWebsite",
 			dataType: 'text',
 			async: false,
-			data: {url:url, ip:ip, services:active_services_arr},
+			data: {url: url, ip: ip, services: active_services_arr},
 			success: function (result) {
 				$('#add_web_modal').modal('hide');
 				$('#website-url-modal').val('');
-				$('.modal_chkbxs').prop('checked',true);
-					if (result==1) {
-						$('#success_modal').modal('show');
-					} else {
-						$('#fail_modal').modal('show');
-					}
+				$('.modal_chkbxs').prop('checked', true);
+				if (result == 1) {
+					$('#success_modal').modal('show');
+				} else {
+					$('#fail_modal').modal('show');
+				}
 			}
 		});
 	});
@@ -1448,13 +1464,13 @@
 				url: "<?php echo base_url(); ?>actions/updateServiceStatus",
 				dataType: 'text',
 				async: false,
-				data: {email: '<?php echo $email; ?>', dataToUpdate: dataToUpdate,website:current_web},
+				data: {email: '<?php echo $email; ?>', dataToUpdate: dataToUpdate, website: current_web},
 				success: function (result) {
 					if (result) {
 						if (currently_checked) {
 							$(this).prop('checked', false);
 							//update global array as well
-							websites_arr[current_val][current_service] =  0;
+							websites_arr[current_val][current_service] = 0;
 						} else {
 							$(this).prop('checked', true);
 							//update global array as well

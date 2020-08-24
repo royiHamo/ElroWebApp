@@ -5,7 +5,7 @@ class External_model extends CI_Model
 {
 	public function __construct()
 	{
-		$this->load->database();
+//		$this->load->database();
 		$this->load->library('encryption');
 		$this->_waf_url = "http://127.0.0.1:5000/";
 		$this->_ssl_labs_url = "https://api.ssllabs.com/api/v2/analyze";
