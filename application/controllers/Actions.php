@@ -7,11 +7,9 @@ class Actions extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-//		$this->load->model('Main_model');
 		$this->load->model('External_model');
 		$this->load->library('encryption');
 		$this->load->helper("security");
-
 	}
 
 	public function pre_login(){
@@ -80,23 +78,21 @@ class Actions extends CI_Controller
 	}
 
 	public function personal_area()
-	{//done!!!!
+	{
 		if ($this->security->xss_clean($this->session->userdata('email'))) {
 				$data['email'] = $this->security->xss_clean($this->session->userdata('email'));
 			if ($this->security->xss_clean($this->session->userdata('is_admin')) != '') { //it's an admin
 				$this->admin_login();
 			} else /*not admin*/{
-				print_r("ASDASDADSA");
 				$sudo_settings = json_decode(file_get_contents('sudo_settings.json'));
-				$disabled_services = array();
-				foreach ($sudo_settings as $detector => $state){
-					if($state == 0)
-						$disabled_services[] = $detector;
+				$services =  json_decode($this->External_model->getActiveServices($data['email']));
+				foreach ($services as $idx => $website_data){
+					foreach ($sudo_settings as $detector => $state){
+						if($state == 0)
+							$website_data->$detector->state = "-1";
+					}
 				}
-				print_r($disabled_services);die;
-				$data['disabled_services'] = $disabled_services;
-				$services =  $this->External_model->getActiveServices($data['email']);
-				$data['services'] = $services;
+				$data['services'] = json_encode($services);
 				$this->load->view('pages/personal_area', $data);
 			}
 		} else {
@@ -126,8 +122,7 @@ class Actions extends CI_Controller
 		foreach ($data as $service => $value){
 			if($value != 0 && $value != 1){
 				//someone is trying to do something wrong!!!!
-				//$this->email('royihamo@gmail.com','elirandroid@gmail.com');
-				//email-smtp.us-east-1.amazonaws.com
+				//notify with email
 				die(0);
 			}
 		}
@@ -142,6 +137,11 @@ class Actions extends CI_Controller
 	{
 		$data = $this->security->xss_clean($this->input->post('dataToUpdate'));
 		$email = $this->security->xss_clean($this->input->post('email'));
+		$sudo_settings = json_decode(file_get_contents('sudo_settings.json'));
+		foreach ($data as $admin_detector => $to_change_state){
+			$sudo_settings->$admin_detector = $to_change_state;
+		}
+		file_put_contents('sudo_settings.json',json_encode($sudo_settings));
 		$res = $this->External_model->adminUpdateServiceStatus($email,$data);
 		echo $res;
 	}
@@ -181,10 +181,5 @@ class Actions extends CI_Controller
 		echo $res;
 	}
 
-//	public function getActiveServices()
-//	{
-//		$email = $this->security->xss_clean($this->session->userdata('email'));
-//		echo json_encode($this->Main_model->getActiveServices($email));
-//	}
 
 }

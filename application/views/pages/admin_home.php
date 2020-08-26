@@ -366,11 +366,6 @@
 										</div>
 									</div>
 								</div>
-<!--								<a class="dropdown-item" href=""><i class="bx bx-user-circle"></i>Profile</a>-->
-<!--								<a class="dropdown-item" href=""><i class="bx bx-cog"></i> Edit Profile</a>-->
-<!--								<a class="dropdown-item" href=""><i class="bx bxs-inbox"></i>Inbox</a>-->
-<!--								<a class="dropdown-item" href=""><i class="bx bx-envelope"></i>Messages</a>-->
-<!--								<a class="dropdown-item" href=""><i class="bx bx-slider-alt"></i> Account Settings</a>-->
 								<a class="dropdown-item" href="<?php echo base_url(); ?>actions/logout"><i class="bx bx-log-out"></i> Log Out</a>
 							</div>
 						</div>
@@ -394,114 +389,19 @@
 					</div>
 				</div>
 				<div class="main-dashboard-header-right">
-<!--					<div>-->
-<!--						<label class="tx-13">Customer Ratings</label>-->
-<!--						<div class="main-star">-->
-<!--							<i class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i class="typcn typcn-star"></i> <span>(14,873)</span>-->
-<!--						</div>-->
-<!--					</div>-->
 
 				</div>
 			</div>
 			<!-- /breadcrumb -->
 
 			<!-- row -->
-<!--			<div class="row row-sm">-->
-<!--				<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">-->
-<!--					<div class="card overflow-hidden sales-card bg-primary-gradient">-->
-<!--						<div class="pl-3 pt-3 pr-3 pb-2 pt-0">-->
-<!--							<div class="">-->
-<!--								<h6 class="mb-3 tx-12 text-white">TODAY ORDERS</h6>-->
-<!--							</div>-->
-<!--							<div class="pb-0 mt-0">-->
-<!--								<div class="d-flex">-->
-<!--									<div class="">-->
-<!--										<h4 class="tx-20 font-weight-bold mb-1 text-white">$5,74.12</h4>-->
-<!--										<p class="mb-0 tx-12 text-white op-7">Compared to last week</p>-->
-<!--									</div>-->
-<!--									<span class="float-right my-auto ml-auto">-->
-<!--												<i class="fas fa-arrow-circle-up text-white"></i>-->
-<!--												<span class="text-white op-7"> +427</span>-->
-<!--											</span>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</div>-->
-<!--						<span id="compositeline" class="pt-1">5,9,5,6,4,12,18,14,10,15,12,5,8,5,12,5,12,10,16,12</span>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">-->
-<!--					<div class="card overflow-hidden sales-card bg-danger-gradient">-->
-<!--						<div class="pl-3 pt-3 pr-3 pb-2 pt-0">-->
-<!--							<div class="">-->
-<!--								<h6 class="mb-3 tx-12 text-white">TODAY EARNINGS</h6>-->
-<!--							</div>-->
-<!--							<div class="pb-0 mt-0">-->
-<!--								<div class="d-flex">-->
-<!--									<div class="">-->
-<!--										<h4 class="tx-20 font-weight-bold mb-1 text-white">$1,230.17</h4>-->
-<!--										<p class="mb-0 tx-12 text-white op-7">Compared to last week</p>-->
-<!--									</div>-->
-<!--									<span class="float-right my-auto ml-auto">-->
-<!--												<i class="fas fa-arrow-circle-down text-white"></i>-->
-<!--												<span class="text-white op-7"> -23.09%</span>-->
-<!--											</span>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</div>-->
-<!--						<span id="compositeline2" class="pt-1">3,2,4,6,12,14,8,7,14,16,12,7,8,4,3,2,2,5,6,7</span>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">-->
-<!--					<div class="card overflow-hidden sales-card bg-success-gradient">-->
-<!--						<div class="pl-3 pt-3 pr-3 pb-2 pt-0">-->
-<!--							<div class="">-->
-<!--								<h6 class="mb-3 tx-12 text-white">TOTAL EARNINGS</h6>-->
-<!--							</div>-->
-<!--							<div class="pb-0 mt-0">-->
-<!--								<div class="d-flex">-->
-<!--									<div class="">-->
-<!--										<h4 class="tx-20 font-weight-bold mb-1 text-white">$7,125.70</h4>-->
-<!--										<p class="mb-0 tx-12 text-white op-7">Compared to last week</p>-->
-<!--									</div>-->
-<!--									<span class="float-right my-auto ml-auto">-->
-<!--												<i class="fas fa-arrow-circle-up text-white"></i>-->
-<!--												<span class="text-white op-7"> 52.09%</span>-->
-<!--											</span>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</div>-->
-<!--						<span id="compositeline3" class="pt-1">5,10,5,20,22,12,15,18,20,15,8,12,22,5,10,12,22,15,16,10</span>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">-->
-<!--					<div class="card overflow-hidden sales-card bg-warning-gradient">-->
-<!--						<div class="pl-3 pt-3 pr-3 pb-2 pt-0">-->
-<!--							<div class="">-->
-<!--								<h6 class="mb-3 tx-12 text-white">PRODUCT SOLD</h6>-->
-<!--							</div>-->
-<!--							<div class="pb-0 mt-0">-->
-<!--								<div class="d-flex">-->
-<!--									<div class="">-->
-<!--										<h4 class="tx-20 font-weight-bold mb-1 text-white">$4,820.50</h4>-->
-<!--										<p class="mb-0 tx-12 text-white op-7">Compared to last week</p>-->
-<!--									</div>-->
-<!--									<span class="float-right my-auto ml-auto">-->
-<!--												<i class="fas fa-arrow-circle-down text-white"></i>-->
-<!--												<span class="text-white op-7"> -152.3</span>-->
-<!--											</span>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</div>-->
-<!--						<span id="compositeline4" class="pt-1">5,9,5,6,4,12,18,14,10,15,12,5,8,5,12,5,12,10,16,12</span>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
+
 			<!-- row closed -->
 			<!--TODO: delete the above old row -->
 
 			<!-- row -->
 			<div class="row row-sm">
-				<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+				<div class="col-xl-4 col-lg-6 col-md-12 col-xm-12">
 					<div class="card overflow-hidden sales-card bg-primary-gradient">
 						<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
 							<div class="">
@@ -522,7 +422,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+				<div class="col-xl-4 col-lg-6 col-md-12 col-xm-12">
 					<div class="card overflow-hidden sales-card bg-danger-gradient">
 						<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
 							<div class="">
@@ -543,7 +443,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+				<div class="col-xl-4 col-lg-6 col-md-12 col-xm-12">
 					<div class="card overflow-hidden sales-card bg-success-gradient">
 						<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
 							<div class="">
@@ -564,7 +464,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+
+			</div>
+			<!-- row closed -->
+			<!-- row -->
+			<div class="row row-sm">
+				<div class="col-xl-4 col-lg-6 col-md-12 col-xm-12">
 					<div class="card overflow-hidden sales-card bg-warning-gradient">
 						<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
 							<div class="">
@@ -585,11 +490,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- row closed -->
-			<!-- row -->
-			<div class="row row-sm">
-				<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+				<div class="col-xl-4 col-lg-6 col-md-12 col-xm-12">
 					<div class="card overflow-hidden sales-card"
 						 style="background-image: linear-gradient(to right, #673AB7 0%, #ba7bfb 100%) !important; ">
 						<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
@@ -612,7 +513,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
+				<div class="col-xl-4 col-lg-6 col-md-12 col-xm-12">
 					<div class="card overflow-hidden sales-card"
 						 style="background-image: linear-gradient(to right, #00cccc 0%, #96e8e8 100%) !important; ">
 						<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
@@ -634,52 +535,6 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
-					<div class="card overflow-hidden sales-card"
-						 style="background-image: linear-gradient(to right, #636f8e 0%, #acb8da 100%) !important;">
-						<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
-							<div class="">
-								<h6 class="mb-3 tx-12 text-white">Cookie Poisoning Detector</h6>
-							</div>
-							<div class="pb-0 mt-0">
-								<div class="d-flex">
-									<div class="">
-										<h4 class="tx-20 font-weight-bold mb-1 text-white">7,125</h4>
-										<p class="mb-0 tx-12 text-white op-7">Blocked attempts</p>
-									</div>
-									<span class="float-right my-auto ml-auto">
-												<input id="cookie_poisoning_detector" class="form-control chkbxs"
-													   type="checkbox"/>
-												<span class="text-white op-7"> active</span>
-											</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
-					<div class="card overflow-hidden sales-card"
-						 style="background-image: linear-gradient(to right, #f10075 0%, #f36eae 100%) !important; ">
-
-						<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
-							<div class="">
-								<h6 class="mb-3 tx-12 text-white">DDOS Detector</h6>
-							</div>
-							<div class="pb-0 mt-0">
-								<div class="d-flex">
-									<div class="">
-										<h4 class="tx-20 font-weight-bold mb-1 text-white">0</h4>
-										<p class="mb-0 tx-12 text-white op-7">Blocked attempts</p>
-									</div>
-									<span class="float-right my-auto ml-auto">
-												<input id="ddos_box" class="form-control chkbxs" type="checkbox" disabled/>
-												<span class="text-white op-7"> active</span>
-											</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 			<!-- row closed -->
 
@@ -687,181 +542,7 @@
 
 
 
-			<!-- row opened -->
-			<div class="row row-sm">
-				<div class="col-md-12 col-lg-12 col-xl-7">
-					<div class="card">
-						<div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
-							<div class="d-flex justify-content-between">
-								<h4 class="card-title mb-0">Customers Status</h4>
-								<i class="mdi mdi-dots-horizontal text-gray"></i>
-							</div>
-							<p class="tx-12 text-muted mb-0">Customers Status and Tracking. The data shown here is based on the last day of the month.</p>
-						</div>
-						<div class="card-body">
-<!--							<div class="total-revenue">-->
-<!--								<div>-->
-<!--									<h4>--><?php //echo $new_users; ?><!--</h4>-->
-<!--									<label><span class="bg-primary"></span>new clients</label>-->
-<!--								</div>-->
-<!--								<div>-->
-<!--									<h4>--><?php //echo $abandoned_users; ?><!--</h4>-->
-<!--									<label><span class="bg-danger"></span>abandoned clients</label>-->
-<!--								</div>-->
-<!--								<div>-->
-<!--									<h4>--><?php //echo $paying_users; ?><!--</h4>-->
-<!--									<label><span class="bg-warning"></span>paying clients</label>-->
-<!--								</div>-->
-<!--							</div>-->
-							<div id="bar" class="sales-bar mt-4"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-5 col-md-12 col-lg-12">
-					<div class="card">
-						<div class="card-header pb-0">
-							<h3 class="card-title mb-2">Servers Capacity</h3>
-							<p class="tx-12 mb-0 text-muted">A graphic presentation of the servers memory status</p>
-						</div>
-						<div class="card-body sales-info ot-0 pb-0 pt-0">
-							<div id="chart" class="ht-150"></div>
-							<div class="row sales-infomation pb-0 mb-0 mx-auto wd-100p">
-								<div class="col-md-6 col">
-									<p class="mb-0 d-flex"><span class="legend bg-primary brround"></span>Delivered</p>
-									<h3 class="mb-1">5238</h3>
-									<div class="d-flex">
-										<p class="text-muted ">Requests in the current month</p>
-									</div>
-								</div>
-								<div class="col-md-6 col">
-									<p class="mb-0 d-flex"><span class="legend bg-info brround"></span>Blocked</p>
-									<h3 class="mb-1">3467</h3>
-									<div class="d-flex">
-										<p class="text-muted">Requests in the current month</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="card ">
-						<div class="card-body">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="d-flex align-items-center pb-2">
-										<p class="mb-0">Total Income so far</p>
-									</div>
-									<h4 class="font-weight-bold mb-2">$7,590</h4>
-									<div class="progress progress-style progress-sm">
-										<div class="progress-bar bg-primary-gradient wd-80p" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="78"></div>
-									</div>
-								</div>
-								<div class="col-md-6 mt-4 mt-md-0">
-									<div class="d-flex align-items-center pb-2">
-										<p class="mb-0">Active Users</p>
-									</div>
-									<h4 class="font-weight-bold mb-2">$5,460</h4>
-									<div class="progress progress-style progress-sm">
-										<div class="progress-bar bg-danger-gradient wd-75" role="progressbar"  aria-valuenow="45" aria-valuemin="0" aria-valuemax="45"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 
-			</div>
-			<!-- row closed -->
-
-
-
-			<!-- row opened -->
-<!--			<div class="row row-sm row-deck">-->
-<!--				<div class="col-md-12 col-lg-4 col-xl-4">-->
-<!--					<div class="card card-dashboard-eight pb-2">-->
-<!--						<h6 class="card-title">Your Top Countries</h6><span class="d-block mg-b-10 text-muted tx-12">Sales performance revenue based by country</span>-->
-<!--						<div class="list-group">-->
-<!--							<div class="list-group-item border-top-0">-->
-<!--								<i class="flag-icon flag-icon-us flag-icon-squared"></i>-->
-<!--								<p>United States</p><span>$1,671.10</span>-->
-<!--							</div>-->
-<!--							<div class="list-group-item">-->
-<!--								<i class="flag-icon flag-icon-nl flag-icon-squared"></i>-->
-<!--								<p>Netherlands</p><span>$1,064.75</span>-->
-<!--							</div>-->
-<!--							<div class="list-group-item">-->
-<!--								<i class="flag-icon flag-icon-gb flag-icon-squared"></i>-->
-<!--								<p>United Kingdom</p><span>$1,055.98</span>-->
-<!--							</div>-->
-<!--							<div class="list-group-item">-->
-<!--								<i class="flag-icon flag-icon-ca flag-icon-squared"></i>-->
-<!--								<p>Canada</p><span>$1,045.49</span>-->
-<!--							</div>-->
-<!--							<div class="list-group-item">-->
-<!--								<i class="flag-icon flag-icon-in flag-icon-squared"></i>-->
-<!--								<p>India</p><span>$1,930.12</span>-->
-<!--							</div>-->
-<!--							<div class="list-group-item border-bottom-0 mb-0">-->
-<!--								<i class="flag-icon flag-icon-au flag-icon-squared"></i>-->
-<!--								<p>Australia</p><span>$1,042.00</span>-->
-<!--							</div>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				<div class="col-md-12 col-lg-8 col-xl-8">-->
-<!--					<div class="card card-table-two">-->
-<!--						<div class="d-flex justify-content-between">-->
-<!--							<h4 class="card-title mb-1">Your Most Recent Earnings</h4>-->
-<!--							<i class="mdi mdi-dots-horizontal text-gray"></i>-->
-<!--						</div>-->
-<!--						<span class="tx-12 tx-muted mb-3 ">This is your most recent earnings for today's date.</span>-->
-<!--						<div class="table-responsive country-table">-->
-<!--							<table class="table table-striped table-bordered mb-0 text-sm-nowrap text-lg-nowrap text-xl-nowrap">-->
-<!--								<thead>-->
-<!--								<tr>-->
-<!--									<th class="wd-lg-25p">Date</th>-->
-<!--									<th class="wd-lg-25p tx-right">Sales Count</th>-->
-<!--									<th class="wd-lg-25p tx-right">Earnings</th>-->
-<!--									<th class="wd-lg-25p tx-right">Tax Witheld</th>-->
-<!--								</tr>-->
-<!--								</thead>-->
-<!--								<tbody>-->
-<!--								<tr>-->
-<!--									<td>05 Dec 2019</td>-->
-<!--									<td class="tx-right tx-medium tx-inverse">34</td>-->
-<!--									<td class="tx-right tx-medium tx-inverse">$658.20</td>-->
-<!--									<td class="tx-right tx-medium tx-danger">-$45.10</td>-->
-<!--								</tr>-->
-<!--								<tr>-->
-<!--									<td>06 Dec 2019</td>-->
-<!--									<td class="tx-right tx-medium tx-inverse">26</td>-->
-<!--									<td class="tx-right tx-medium tx-inverse">$453.25</td>-->
-<!--									<td class="tx-right tx-medium tx-danger">-$15.02</td>-->
-<!--								</tr>-->
-<!--								<tr>-->
-<!--									<td>07 Dec 2019</td>-->
-<!--									<td class="tx-right tx-medium tx-inverse">34</td>-->
-<!--									<td class="tx-right tx-medium tx-inverse">$653.12</td>-->
-<!--									<td class="tx-right tx-medium tx-danger">-$13.45</td>-->
-<!--								</tr>-->
-<!--								<tr>-->
-<!--									<td>08 Dec 2019</td>-->
-<!--									<td class="tx-right tx-medium tx-inverse">45</td>-->
-<!--									<td class="tx-right tx-medium tx-inverse">$546.47</td>-->
-<!--									<td class="tx-right tx-medium tx-danger">-$24.22</td>-->
-<!--								</tr>-->
-<!--								<tr>-->
-<!--									<td>09 Dec 2019</td>-->
-<!--									<td class="tx-right tx-medium tx-inverse">31</td>-->
-<!--									<td class="tx-right tx-medium tx-inverse">$425.72</td>-->
-<!--									<td class="tx-right tx-medium tx-danger">-$25.01</td>-->
-<!--								</tr>-->
-<!--								</tbody>-->
-<!--							</table>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
-			<!-- /row -->
 		</div>
 		<!-- /Container -->
 	</div>
@@ -1606,7 +1287,7 @@
 			$(chkbx).parent().parent().find('h4').html(activeServicesArr[$current_id]["count"])
 
 
-			$status = (activeServicesArr[$current_id]["state"] === '-1')? false : true;
+			$status = (activeServicesArr[$current_id]["state"] === 'True')? true : false;
 			$(chkbx).prop( "checked", $status )
 		});
 
@@ -1617,7 +1298,7 @@
 			if (confirm("are you sure you wish to change this?")) {
 				var dataToUpdate = {};
 				var currentService = $(this).attr('id');
-				dataToUpdate[currentService] = updateToTrue ? 0 : -1;
+				dataToUpdate[currentService] = updateToTrue ? 1 : 0;
 
 				$.ajax({
 					type: "POST",

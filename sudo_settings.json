@@ -1,6 +1,1 @@
-{"xss_detector": "1",
-  "sql_detector": "1",
-  "xml_detector": "1",
-  "csrf_detector": "1",
-  "xss_detector": "1"
-}
+{"xss_detector":"1","sql_detector":"1","xml_detector":"1","csrf_detector":"0","bruteforce_detector":"1","bots_detector":"0"}

@@ -26,6 +26,29 @@ class External_model extends CI_Model
 	{
 		$data = array("email"=> $email, "is_admin"=>$is_admin);
 		return $this->sendDataToElroWaf(json_encode($data),"getActiveServices");
+		//TODO; remove when done testing
+//		return "[{\"server_id\": {\"state\": \"3\", \"count\": 0},
+//		\"cookie_poisoning_detector\": {\"state\": \"True\", \"count\": 0},
+//		\"xml_detector\": {\"state\": \"True\", \"count\": 0},
+//		\"bots_detector\": {\"state\": \"True\", \"count\": 0},
+//		\"user_id\": \"3\", \"item_id\": \"3\",
+//		\"created_on\": {\"state\": \"2020-08-26 15:38:33.166390\",
+//		\"count\": 0}, \"bruteforce_detector\": {\"state\": \"True\", \"count\": 0},
+//		\"csrf_detector\": {\"state\": \"True\", \"count\": 0},
+//		\"xss_detector\": {\"state\": \"False\", \"count\": 0},
+//		\"sql_detector\": {\"state\": \"True\", \"count\": 0},
+//		\"active\": \"True\", \"server_ip\": \"1.2.3.45\", \"time_stamp\":
+//		 \"2020-08-26 15:38:33.159007\", \"website\": \"test23.website.com\"},
+//		  {\"server_id\": {\"state\": \"4\", \"count\": 42}, \"cookie_poisoning_detector\":
+//		  {\"state\": \"False\", \"count\": 42}, \"xml_detector\": {\"state\": \"True\",
+//		  \"count\": 42}, \"bots_detector\": {\"state\": \"False\", \"count\": 42},
+//		  \"user_id\": \"3\", \"item_id\": \"4\", \"created_on\": {\"state\":
+//		  \"2020-08-26 16:03:03.507399\", \"count\": 42}, \"bruteforce_detector\":
+//		  {\"state\": \"True\", \"count\": 42}, \"csrf_detector\": {\"state\": \"True\",
+//		  \"count\": 42}, \"xss_detector\": {\"state\": \"False\", \"count\": 42},
+//		  \"sql_detector\": {\"state\": \"True\", \"count\": 42}, \"active\": \"True\",
+//		  \"server_ip\": \"52.1.121.6\", \"time_stamp\": \"2020-08-26 16:03:03.496693\",
+//		  \"website\": \"myfhouse.com\"}]";
 	}
 
 	public function getUsersData()
