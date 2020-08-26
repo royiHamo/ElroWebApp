@@ -99,22 +99,22 @@
 
 				</div>
 				<div class="main-dashboard-header-right">
-					<div>
-						<label class="tx-13">Customer Ratings</label>
-						<div class="main-star">
-							<i class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i
-									class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i
-									class="typcn typcn-star"></i> <span>(14,873)</span>
-						</div>
-					</div>
-					<div>
-						<label class="tx-13">Total Blocks by Elro</label>
-						<h5>46,275</h5>
-					</div>
-					<div>
-						<label class="tx-13">Total Safe Visits</label>
-						<h5>783,675</h5>
-					</div>
+<!--					<div>-->
+<!--						<label class="tx-13">Customer Ratings</label>-->
+<!--						<div class="main-star">-->
+<!--							<i class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i-->
+<!--									class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i-->
+<!--									class="typcn typcn-star"></i> <span>(14,873)</span>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div>-->
+<!--						<label class="tx-13">Total Blocks by Elro</label>-->
+<!--						<h5>46,275</h5>-->
+<!--					</div>-->
+<!--					<div>-->
+<!--						<label class="tx-13">Total Safe Visits</label>-->
+<!--						<h5>783,675</h5>-->
+<!--					</div>-->
 				</div>
 			</div>
 			<!-- /breadcrumb -->
