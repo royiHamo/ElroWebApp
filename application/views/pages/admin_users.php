@@ -407,7 +407,6 @@
 									<th class="border-bottom-0">CSRF</th>
 									<th class="border-bottom-0">BOTS</th>
 									<th class="border-bottom-0">XML</th>
-									<th class="border-bottom-0">Cookie Poisoning</th>
 									<th class="border-bottom-0">Brute Force</th>
 								</tr>
 								</thead>
@@ -1180,7 +1179,6 @@
 					user['csrf_detector'],
 					user['bots_detector'],
 					user['xml_detector'],
-					user['cookie_poisoning_detector'],
 					user['bruteforce_detector']
 				] ).draw( false );
 			});

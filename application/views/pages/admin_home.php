@@ -79,7 +79,7 @@
 			<div class="app-sidebar__user clearfix">
 				<div class="dropdown user-pro-body">
 					<div class="">
-						<img alt="user-img" class="avatar avatar-xl brround" src="<?php echo base_url(); ?>/assets/img/faces/<?php echo ucfirst(strtok($email, '@')); ?>.jpg"><span class="avatar-status profile-status bg-green"></span>
+						<img alt="user-img" class="avatar avatar-xl brround" src="<?php echo base_url(); ?>/assets/img/faces/admin_face.png"><span class="avatar-status profile-status bg-green"></span>
 					</div>
 					<div class="user-info">
 						<h4 class="font-weight-semibold mt-3 mb-0"><?php echo ucfirst(strtok($email, '@')); ?></h4>
@@ -356,11 +356,11 @@
 							<a class="new nav-link full-screen-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></a>
 						</div>
 						<div class="dropdown main-profile-menu nav nav-item nav-link">
-							<a class="profile-user d-flex" href=""><img alt="" src="<?php echo base_url(); ?>/assets/img/faces/<?php echo ucfirst(strtok($email, '@')); ?>.jpg"></a>
+							<a class="profile-user d-flex" href=""><img alt="" src="<?php echo base_url(); ?>/assets/img/faces/admin_face.png"></a>
 							<div class="dropdown-menu">
 								<div class="main-header-profile bg-primary p-3">
 									<div class="d-flex wd-100p">
-										<div class="main-img-user"><img alt="" src="<?php echo base_url(); ?>/assets/img/faces/<?php echo ucfirst(strtok($email, '@')); ?>.jpg" class=""></div>
+										<div class="main-img-user"><img alt="" src="<?php echo base_url(); ?>/assets/img/faces/admin_face.png" class=""></div>
 										<div class="ml-3 my-auto">
 											<h6><?php echo ucfirst(strtok($email, '@')); ?></h6><span>System Admin</span>
 										</div>
@@ -764,7 +764,7 @@
 							</div>
 							<div class="list-group-item d-flex  align-items-center">
 								<div class="mr-3">
-									<span class="avatar avatar-lg brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/<?php echo ucfirst(strtok($email, '@')); ?>.jpg"><span class="avatar-status bg-success"></span></span>
+									<span class="avatar avatar-lg brround cover-image" data-image-src="<?php echo base_url(); ?>/assets/img/faces/admin_face.png"><span class="avatar-status bg-success"></span></span>
 								</div>
 								<div>
 									<strong>Olivia</strong> New Schedule Realease......
@@ -959,7 +959,7 @@
 					<div class="action-header clearfix">
 						<div class="float-left hidden-xs d-flex ml-2">
 							<div class="img_cont mr-3">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/<?php echo ucfirst(strtok($email, '@')); ?>.jpg" class="rounded-circle user_img" alt="img">
+								<img src="<?php echo base_url(); ?>/assets/img/faces/admin_face.png" class="rounded-circle user_img" alt="img">
 							</div>
 							<div class="align-items-center mt-2">
 								<h4 class="text-white mb-0 font-weight-semibold">Daneil Scott</h4>
@@ -1004,7 +1004,7 @@
 						</div>
 						<div class="d-flex justify-content-start">
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/<?php echo ucfirst(strtok($email, '@')); ?>.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="<?php echo base_url(); ?>/assets/img/faces/admin_face.png" class="rounded-circle user_img_msg" alt="img">
 							</div>
 							<div class="msg_cotainer">
 								Hi, how are you Jenna Side?
@@ -1022,7 +1022,7 @@
 						</div>
 						<div class="d-flex justify-content-start ">
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/<?php echo ucfirst(strtok($email, '@')); ?>.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="<?php echo base_url(); ?>/assets/img/faces/admin_face.png" class="rounded-circle user_img_msg" alt="img">
 							</div>
 							<div class="msg_cotainer">
 								I am good too, thank you for your chat template
@@ -1040,7 +1040,7 @@
 						</div>
 						<div class="d-flex justify-content-start ">
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/<?php echo ucfirst(strtok($email, '@')); ?>.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="<?php echo base_url(); ?>/assets/img/faces/admin_face.png" class="rounded-circle user_img_msg" alt="img">
 							</div>
 							<div class="msg_cotainer">
 								Yo, Can you update Views?
@@ -1058,7 +1058,7 @@
 						</div>
 						<div class="d-flex justify-content-start ">
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/<?php echo ucfirst(strtok($email, '@')); ?>.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="<?php echo base_url(); ?>/assets/img/faces/admin_face.png" class="rounded-circle user_img_msg" alt="img">
 							</div>
 							<div class="msg_cotainer">
 								Yo, Can you update Views?
@@ -1076,7 +1076,7 @@
 						</div>
 						<div class="d-flex justify-content-start ">
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/<?php echo ucfirst(strtok($email, '@')); ?>.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="<?php echo base_url(); ?>/assets/img/faces/admin_face.png" class="rounded-circle user_img_msg" alt="img">
 							</div>
 							<div class="msg_cotainer">
 								Yo, Can you update Views?
@@ -1094,7 +1094,7 @@
 						</div>
 						<div class="d-flex justify-content-start">
 							<div class="img_cont_msg">
-								<img src="<?php echo base_url(); ?>/assets/img/faces/<?php echo ucfirst(strtok($email, '@')); ?>.jpg" class="rounded-circle user_img_msg" alt="img">
+								<img src="<?php echo base_url(); ?>/assets/img/faces/admin_face.png" class="rounded-circle user_img_msg" alt="img">
 							</div>
 							<div class="msg_cotainer">
 								Okay Bye, text you later..
@@ -1127,7 +1127,7 @@
 			<div class="modal-content bg-dark border-0 text-white">
 				<div class="modal-body mx-auto text-center p-7">
 					<h5>Valex Video call</h5>
-					<img src="<?php echo base_url(); ?>/assets/img/faces/<?php echo ucfirst(strtok($email, '@')); ?>.jpg" class="rounded-circle user-img-circle h-8 w-8 mt-4 mb-3" alt="img">
+					<img src="<?php echo base_url(); ?>/assets/img/faces/admin_face.png" class="rounded-circle user-img-circle h-8 w-8 mt-4 mb-3" alt="img">
 					<h4 class="mb-1 font-weight-semibold">Daneil Scott</h4>
 					<h6>Calling...</h6>
 					<div class="mt-5">
@@ -1160,7 +1160,7 @@
 			<div class="modal-content border-0">
 				<div class="modal-body mx-auto text-center p-7">
 					<h5>Valex Voice call</h5>
-					<img src="<?php echo base_url(); ?>/assets/img/faces/<?php echo ucfirst(strtok($email, '@')); ?>.jpg" class="rounded-circle user-img-circle h-8 w-8 mt-4 mb-3" alt="img">
+					<img src="<?php echo base_url(); ?>/assets/img/faces/admin_face.png" class="rounded-circle user-img-circle h-8 w-8 mt-4 mb-3" alt="img">
 					<h4 class="mb-1  font-weight-semibold">Daneil Scott</h4>
 					<h6>Calling...</h6>
 					<div class="mt-5">
@@ -1233,8 +1233,8 @@
 <!-- Custom Scroll bar Js-->
 <script src="<?php echo base_url(); ?>/assets/plugins/mscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 
-<!--Internal Apexchart js-->
-<script src="<?php echo base_url(); ?>/assets/js/apexcharts.js"></script>
+<!--<!--Internal Apexchart js-->-->
+<!--<script src="--><?php //echo base_url(); ?><!--/assets/js/apexcharts.js"></script>-->
 
 <!-- Rating js-->
 <script src="<?php echo base_url(); ?>/assets/plugins/rating/jquery.rating-stars.js"></script>
@@ -1265,8 +1265,8 @@
 <!--Internal  index js -->
 <script src="<?php echo base_url(); ?>/assets/js/index-dark.js"></script>
 
-<!-- Apexchart js-->
-<script src="<?php echo base_url(); ?>/assets/js/apexcharts.js"></script>
+<!--<!-- Apexchart js-->-->
+<!--<script src="--><?php //echo base_url(); ?><!--/assets/js/apexcharts.js"></script>-->
 
 <!-- custom js -->
 <script src="<?php echo base_url(); ?>/assets/js/custom.js"></script>
@@ -1327,94 +1327,94 @@
 		});
 
 
-		/* Apexcharts (#bar) */
-		var optionsBar = {
-			chart: {
-				height: 249,
-				type: 'bar',
-				toolbar: {
-					show: false,
-				},
-				fontFamily: 'Nunito, sans-serif',
-				// dropShadow: {
-				//   enabled: true,
-				//   top: 1,
-				//   left: 1,
-				//   blur: 2,
-				//   opacity: 0.2,
-				// }
-			},
-			colors: ["#036fe7", '#f93a5a', '#f7a556'],
-			plotOptions: {
-				bar: {
-					dataLabels: {
-						enabled: false
-					},
-					columnWidth: '42%',
-					endingShape: 'rounded',
-				}
-			},
-			dataLabels: {
-				enabled: false
-			},
-			stroke: {
-				show: true,
-				width: 2,
-				endingShape: 'rounded',
-				colors: ['transparent'],
-			},
-			responsive: [{
-				breakpoint: 576,
-				options: {
-					stroke: {
-						show: true,
-						width: 1,
-						endingShape: 'rounded',
-						colors: ['transparent'],
-					},
-				},
-
-
-			}],
-			series: [{
-				name: 'New',
-				data: [74, 85, 57, 56, 76, 35, 61, 98, 36 , 50, 48, 29, 57]
-			}, {
-				name: 'Abandoned',
-				data: [46, 35, 101, 98, 44, 55, 57, 56, 55 ,34, 79, 46,76]
-			}, {
-				name: 'Paying',
-				data: [26, 35, 41, 78, 34, 65, 27, 46, 37, 65, 49, 23,49]
-			}],
-			xaxis: {
-				categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-			},
-			fill: {
-				opacity: 1
-			},
-			legend: {
-				show: false,
-				floating: true,
-				position: 'top',
-				horizontalAlign: 'left',
-				// offsetY: -36
-
-			},
-			// title: {
-			//   text: 'Financial Information',
-			//   align: 'left',
-			// },
-			tooltip: {
-				y: {
-					formatter: function (val) {
-						return "$ " + val + " thousands"
-					}
-				}
-			}
-		}
-		new ApexCharts(document.querySelector('#bar'), optionsBar).render();
-		$('#users_count').html(<?php echo $users_count; ?>);
-		/* Apexcharts (#bar) closed */
+		///* Apexcharts (#bar) */
+		//var optionsBar = {
+		//	chart: {
+		//		height: 249,
+		//		type: 'bar',
+		//		toolbar: {
+		//			show: false,
+		//		},
+		//		fontFamily: 'Nunito, sans-serif',
+		//		// dropShadow: {
+		//		//   enabled: true,
+		//		//   top: 1,
+		//		//   left: 1,
+		//		//   blur: 2,
+		//		//   opacity: 0.2,
+		//		// }
+		//	},
+		//	colors: ["#036fe7", '#f93a5a', '#f7a556'],
+		//	plotOptions: {
+		//		bar: {
+		//			dataLabels: {
+		//				enabled: false
+		//			},
+		//			columnWidth: '42%',
+		//			endingShape: 'rounded',
+		//		}
+		//	},
+		//	dataLabels: {
+		//		enabled: false
+		//	},
+		//	stroke: {
+		//		show: true,
+		//		width: 2,
+		//		endingShape: 'rounded',
+		//		colors: ['transparent'],
+		//	},
+		//	responsive: [{
+		//		breakpoint: 576,
+		//		options: {
+		//			stroke: {
+		//				show: true,
+		//				width: 1,
+		//				endingShape: 'rounded',
+		//				colors: ['transparent'],
+		//			},
+		//		},
+		//
+		//
+		//	}],
+		//	series: [{
+		//		name: 'New',
+		//		data: [74, 85, 57, 56, 76, 35, 61, 98, 36 , 50, 48, 29, 57]
+		//	}, {
+		//		name: 'Abandoned',
+		//		data: [46, 35, 101, 98, 44, 55, 57, 56, 55 ,34, 79, 46,76]
+		//	}, {
+		//		name: 'Paying',
+		//		data: [26, 35, 41, 78, 34, 65, 27, 46, 37, 65, 49, 23,49]
+		//	}],
+		//	xaxis: {
+		//		categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+		//	},
+		//	fill: {
+		//		opacity: 1
+		//	},
+		//	legend: {
+		//		show: false,
+		//		floating: true,
+		//		position: 'top',
+		//		horizontalAlign: 'left',
+		//		// offsetY: -36
+		//
+		//	},
+		//	// title: {
+		//	//   text: 'Financial Information',
+		//	//   align: 'left',
+		//	// },
+		//	tooltip: {
+		//		y: {
+		//			formatter: function (val) {
+		//				return "$ " + val + " thousands"
+		//			}
+		//		}
+		//	}
+		//}
+		//new ApexCharts(document.querySelector('#bar'), optionsBar).render();
+		//$('#users_count').html(<?php //echo $users_count; ?>//);
+		///* Apexcharts (#bar) closed */
 
 
 

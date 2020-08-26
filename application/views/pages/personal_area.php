@@ -795,7 +795,9 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-md-3">
+								</div>
+								<div class="row">
+									<div class="col-md-4">
 										<div class="row">
 											<div class="col">
 												<input id="xss_detector" class="form-control modal_chkbxs" checked
@@ -809,14 +811,10 @@
 											</div>
 										</div>
 									</div>
-
-								</div>
-								<div class="row">
-									<div class="col-md-3">
+									<div class="col-md-4">
 
 										<div class="row">
 											<div class="col">
-
 												<input id="bruteforce_detector"
 													   class="form-control modal_chkbxs" checked
 													   type="checkbox"
@@ -829,7 +827,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-md-3">
+									<div class="col-md-4">
 										<div class="row">
 											<div class="col">
 
@@ -842,35 +840,6 @@
 										<div class="row">
 											<div class="col">
 												<span class="text-white op-7"> bots</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="row">
-											<div class="col">
-												<input id="cookie_poisoning_detector"
-													   class="form-control modal_chkbxs" disabled
-													   type="checkbox"
-													   style="width:20px;height:20px;"/>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col">
-												<span class="text-white op-7"> cookie poison</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="row">
-											<div class="col">
-												<input id="ddos_box" class="form-control modal_chkbxs" checked
-													   type="checkbox"
-													   style="width:20px;height:20px;"/>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col">
-												<span class="text-white op-7"> ddos</span>
 											</div>
 										</div>
 									</div>
