@@ -11,6 +11,7 @@ class Actions extends CI_Controller
 		$this->load->model('External_model');
 		$this->load->library('encryption');
 		$this->load->helper("security");
+
 	}
 
 	public function pre_login(){
@@ -85,6 +86,15 @@ class Actions extends CI_Controller
 			if ($this->security->xss_clean($this->session->userdata('is_admin')) != '') { //it's an admin
 				$this->admin_login();
 			} else /*not admin*/{
+				print_r("ASDASDADSA");
+				$sudo_settings = json_decode(file_get_contents('sudo_settings.json'));
+				$disabled_services = array();
+				foreach ($sudo_settings as $detector => $state){
+					if($state == 0)
+						$disabled_services[] = $detector;
+				}
+				print_r($disabled_services);die;
+				$data['disabled_services'] = $disabled_services;
 				$services =  $this->External_model->getActiveServices($data['email']);
 				$data['services'] = $services;
 				$this->load->view('pages/personal_area', $data);
